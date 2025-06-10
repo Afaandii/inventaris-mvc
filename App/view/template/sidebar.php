@@ -41,11 +41,47 @@
               <a href="#" class="nav-link ">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                  Dashboard
+                  Transaksi
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="<?= BASEURL; ?>/pemesanan" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Pemesanan</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= BASEURL; ?>/peminjam" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Peminjam</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= BASEURL; ?>/peminjaman" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Peminjaman</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= BASEURL; ?>/perbaikan" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Perbaikan</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= BASEURL; ?>/peminjaman_siswa" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Peminjaman Siswa</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= BASEURL; ?>/peminjaman_guru" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Peminjaman Guru</p>
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="nav-item">
@@ -142,6 +178,17 @@
                   </a>
                 </li>
               </ul>
+            <li class="nav-item">
+              <a href="#" class="nav-link ">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Manajemen Akun
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+              </ul>
+            </li>
             </li>
           </ul>
         </nav>

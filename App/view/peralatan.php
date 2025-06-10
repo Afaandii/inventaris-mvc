@@ -32,11 +32,11 @@
                         <th>Aksi</th>
                         <th>Kode Peralatan</th>
                         <th>Nama Peralatan</th>
-                        <th>Tanggal Beli Peralatan</th>
+                        <th>Tanggal Pembelian</th>
                         <th>Status Peralatan</th>
-                        <th>Jumlah Kerusakan Peralatan</th>
-                        <th>Status Ketersediaan Peralatan</th>
-                        <th>Aturan Service Peralatan</th>
+                        <th>Jumlah Kerusakan</th>
+                        <th>Status Ketersediaan</th>
+                        <th>Aturan Service</th>
                         <th>Image Peralatan</th>
                       </tr>
                     </thead>

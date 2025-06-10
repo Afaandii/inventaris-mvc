@@ -1,0 +1,70 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Tabel Pemesanan</h1>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- /.row -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">DataTable Pemesanan</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Aksi</th>
+                        <th>Kode Pemesanan</th>
+                        <th>Username Peminjam</th>
+                        <th>Status Pemesanan</th>
+                        <th>Tanggal Pemesanan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $i = 1; ?>
+                      <?php foreach ($data['pemesanan'] as $pesan) { ?>
+                      <tr>
+                        <td><?php echo $i; ?></td>
+                        <td>
+                          <a href="updatePemesanan.php?id=<?php echo $pesan["ID_PEMESANAN"]; ?>">Update</a> |
+                          <a href="hapusPemesanan.php?id=<?php echo $pesan["ID_PEMESANAN"]; ?>">Delete</a>
+                        </td>
+                        <td><?= $pesan["KODE_PEMESANAN"]; ?></td>
+                        <td><?= $pesan['USERNAME_PEMINJAM']; ?></td>
+                        <td><?php echo $pesan["STATUS_PEMESANAN"]; ?></td>
+                        <td><?php echo $pesan["TANGGAL_PEMESANAN"]; ?></td>
+                      </tr>
+                      <?php $i++; ?>
+                      <?php }; ?>
+                    </tbody>
+                  </table>
+                  <a href="createPemesanan.php">Tambah Pemesanan</a>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!--/. container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>

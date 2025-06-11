@@ -5,7 +5,7 @@ class Jadwal extends Controller
   {
     $data['jadwal'] = $this->model('Jadwal_model')->getAllJadwal();
     $this->view('template/header');
-    $this->view('jadwal', $data);
+    $this->view('jadwal/jadwal', $data);
     $this->view('template/sidebar');
     $this->view('template/footer');
   }

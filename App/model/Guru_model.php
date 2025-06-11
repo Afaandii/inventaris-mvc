@@ -82,4 +82,27 @@ class Guru_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getGuruById($id)
+  {
+    $this->db->query("SELECT *, peminjam.USERNAME_PEMINJAM, jabatan.NAMA_JABATAN FROM guru INNER JOIN peminjam ON guru.ID_PEMINJAM = peminjam.ID_PEMINJAM INNER JOIN jabatan ON guru.ID_JABATAN = jabatan.ID_JABATAN WHERE ID_GURU = :id");
+    $this->db->bind('id', $id);
+    return $this->db->single();
+  }
+
+  public function updateGuru($request)
+  {
+    $this->db->query("UPDATE guru SET KODE_GURU = :kode, ID_PEMINJAM = :peminjam, ID_JABATAN = :jabatan, NIK = :nik, NAMA_GURU = :guru, ALAMAT_GURU = :alamat, TANGGALLAHIR_GURU = :tanggal_lahir WHERE ID_GURU = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('peminjam', $request['peminjam']);
+    $this->db->bind('jabatan', $request['jabatan']);
+    $this->db->bind('nik', $request['nik']);
+    $this->db->bind('guru', $request['nama_guru']);
+    $this->db->bind('alamat', $request['alamat_guru']);
+    $this->db->bind('tanggal_lahir', $request['tgllahir_guru']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

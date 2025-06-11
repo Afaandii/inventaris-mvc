@@ -15,6 +15,8 @@
   <section class="content">
     <div class="container-fluid">
 
+      <?php Flasher::flash() ?>
+
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -44,7 +46,7 @@
                         <tr>
                           <td><?php echo $i; ?></td>
                           <td>
-                            <a href="updateGuru.php?id=<?php echo $gur["ID_GURU"]; ?>">update</a> |
+                            <a href="<?= BASEURL ?>/guru/edit/<?php echo $gur["ID_GURU"]; ?>">update</a> |
                             <a href="hapusGuru.php?nik=<?php echo $gur["NIK"]; ?> ">Delete</a>
                           </td>
                           <td><?= $gur["KODE_GURU"]; ?></td>

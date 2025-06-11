@@ -5,7 +5,7 @@ class Jurusan extends Controller
   {
     $data['jurusan'] = $this->model('Jurusan_model')->getAllJurusan();
     $this->view('template/header');
-    $this->view('jurusan', $data);
+    $this->view('jurusan/jurusan', $data);
     $this->view('template/sidebar');
     $this->view('template/footer');
   }

@@ -5,7 +5,7 @@ class Guru extends Controller
   {
     $data['guru'] = $this->model('Guru_model')->getAllGuru();
     $this->view('template/header');
-    $this->view('guru', $data);
+    $this->view('guru/guru', $data);
     $this->view('template/sidebar');
     $this->view('template/footer');
   }

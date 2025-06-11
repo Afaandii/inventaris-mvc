@@ -5,7 +5,7 @@ class Hari extends Controller
   {
     $data['hari'] = $this->model('Hari_model')->getAllHari();
     $this->view('template/header');
-    $this->view('hari', $data);
+    $this->view('hari/hari', $data);
     $this->view('template/sidebar');
     $this->view('template/footer');
   }

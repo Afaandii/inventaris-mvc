@@ -105,4 +105,13 @@ class Guru_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deleteGuru($id)
+  {
+    $this->db->query("DELETE FROM guru WHERE ID_GURU = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

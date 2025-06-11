@@ -47,7 +47,8 @@
                           <td><?php echo $i; ?></td>
                           <td>
                             <a href="<?= BASEURL ?>/guru/edit/<?php echo $gur["ID_GURU"]; ?>">update</a> |
-                            <a href="hapusGuru.php?nik=<?php echo $gur["NIK"]; ?> ">Delete</a>
+                            <a href="<?= BASEURL ?>/guru/delete/<?php echo $gur["ID_GURU"]; ?> "
+                              onclick="return confirm('Apakah Yakin Menghapus Data?')">Delete</a>
                           </td>
                           <td><?= $gur["KODE_GURU"]; ?></td>
                           <td><?php echo $gur["NIK"]; ?></td>

@@ -57,4 +57,17 @@ class Guru extends Controller
       exit;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model('Guru_model')->deleteGuru($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Di delete', 'success');
+      header("Location: " . BASEURL . '/guru');
+      exit;
+    } else {
+      Flasher::setFlash('Gagal!!!', 'Di delete', 'danger');
+      header("Location: " . BASEURL . "/guru");
+      exit;
+    }
+  }
 }

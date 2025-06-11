@@ -5,7 +5,7 @@ class Warna extends Controller
   {
     $data['warna'] = $this->model('Warna_model')->getAllWarna();
     $this->view('template/header');
-    $this->view('warna', $data);
+    $this->view('warna/warna', $data);
     $this->view('template/sidebar');
     $this->view('template/footer');
   }

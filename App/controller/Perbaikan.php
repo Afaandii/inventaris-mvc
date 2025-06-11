@@ -5,7 +5,7 @@ class Perbaikan extends Controller
   {
     $data['perbaikan'] = $this->model('Perbaikan_model')->getAllPerbaikan();
     $this->view('template/header');
-    $this->view('perbaikan', $data);
+    $this->view('perbaikan/perbaikan', $data);
     $this->view('template/sidebar');
     $this->view('template/footer');
   }

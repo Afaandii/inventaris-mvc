@@ -5,7 +5,7 @@ class Peralatan extends Controller
   {
     $data['peralatan'] = $this->model('Peralatan_model')->getAllPeralatan();
     $this->view('template/header');
-    $this->view('peralatan', $data);
+    $this->view('peralatan/peralatan', $data);
     $this->view('template/sidebar');
     $this->view('template/footer');
   }

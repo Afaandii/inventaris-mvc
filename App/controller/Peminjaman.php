@@ -5,7 +5,7 @@ class Peminjaman extends Controller
   {
     $data['peminjaman'] = $this->model('Peminjaman_model')->getAllPeminjaman();
     $this->view('template/header');
-    $this->view('peminjaman', $data);
+    $this->view('peminjaman/peminjaman', $data);
     $this->view('template/sidebar');
     $this->view('template/footer');
   }

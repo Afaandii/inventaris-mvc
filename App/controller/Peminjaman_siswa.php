@@ -5,7 +5,7 @@ class Peminjaman_siswa extends Controller
   {
     $data['peminjaman_siswa'] = $this->model('Peminjaman_siswa_model')->getAllPeminjamanSiswa();
     $this->view('template/header');
-    $this->view('peminjaman_siswa', $data);
+    $this->view('peminjaman_siswa/peminjaman_siswa', $data);
     $this->view('template/sidebar');
     $this->view('template/footer');
   }

@@ -20,11 +20,11 @@
           <div class="card card-primary">
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="" method="post">
+            <form action="<?= BASEURL ?>/denda/store" method="post">
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Denda</label>
-                  <input type="text" name="kodeDen" id="kode" value="<?= $kodeDenda ?>" readonly>
+                  <input type="text" name="kodeDen" id="kode" value="<?= $data["kodeDenda"] ?>" readonly>
                   <br>
                   <label for="denda">Denda</label>
                   <input type="number" name="denda" class="form-control" id="denda" placeholder="Masukan denda">

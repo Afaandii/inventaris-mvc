@@ -49,6 +49,9 @@
     <!-- <script src="<?= BASEURL ?>/js/demo.js"></script> -->
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="<?= BASEURL ?>/js/pages/dashboard.js"></script>
+    <!-- Bootstrap JS (Wajib agar close button jalan) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     </body>
 
     </html>

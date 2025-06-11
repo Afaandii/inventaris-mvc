@@ -16,6 +16,8 @@
     <div class="container-fluid">
       <!-- Main row -->
 
+      <?php Flasher::flash(); ?>
+
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">

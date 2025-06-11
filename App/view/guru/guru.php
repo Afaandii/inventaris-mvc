@@ -41,23 +41,23 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['guru'] as $gur) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="updateGuru.php?id=<?php echo $gur["ID_GURU"]; ?>">update</a> |
-                          <a href="hapusGuru.php?nik=<?php echo $gur["NIK"]; ?> ">Delete</a>
-                        </td>
-                        <td><?= $gur["KODE_GURU"]; ?></td>
-                        <td><?php echo $gur["NIK"]; ?></td>
-                        <td><?php echo $gur["NAMA_GURU"]; ?></td>
-                        <td><?php echo $gur["ALAMAT_GURU"]; ?></td>
-                        <td><?php echo $gur["TANGGALLAHIR_GURU"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a href="updateGuru.php?id=<?php echo $gur["ID_GURU"]; ?>">update</a> |
+                            <a href="hapusGuru.php?nik=<?php echo $gur["NIK"]; ?> ">Delete</a>
+                          </td>
+                          <td><?= $gur["KODE_GURU"]; ?></td>
+                          <td><?php echo $gur["NIK"]; ?></td>
+                          <td><?php echo $gur["NAMA_GURU"]; ?></td>
+                          <td><?php echo $gur["ALAMAT_GURU"]; ?></td>
+                          <td><?php echo $gur["TANGGALLAHIR_GURU"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createGuru.php">Tambah Guru</a>
+                  <a href="<?= BASEURL ?>/guru/create">Tambah Guru</a>
                 </div>
                 <!-- /.card-body -->
               </div>

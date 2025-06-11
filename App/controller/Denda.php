@@ -9,4 +9,12 @@ class Denda extends Controller
     $this->view('template/sidebar');
     $this->view('template/footer');
   }
+
+  public function create()
+  {
+    $this->view('template/header');
+    $this->view('denda/create');
+    $this->view('template/sidebar');
+    $this->view('template/footer');
+  }
 }

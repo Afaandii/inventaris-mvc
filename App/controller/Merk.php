@@ -5,7 +5,7 @@ class Merk extends Controller
   {
     $data['merk'] = $this->model('Merk_model')->getAllMerk();
     $this->view('template/header');
-    $this->view('merk', $data);
+    $this->view('merk/merk', $data);
     $this->view('template/sidebar');
     $this->view('template/footer');
   }

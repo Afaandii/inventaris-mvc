@@ -5,7 +5,7 @@ class Pelajaran extends Controller
   {
     $data['pelajaran'] = $this->model('Pelajaran_model')->getAllPelajaran();
     $this->view('template/header');
-    $this->view('pelajaran', $data);
+    $this->view('pelajaran/pelajaran', $data);
     $this->view('template/sidebar');
     $this->view('template/footer');
   }

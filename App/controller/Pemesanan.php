@@ -5,7 +5,7 @@ class Pemesanan extends Controller
   {
     $data['pemesanan'] = $this->model('Pemesanan_model')->getAllPemesanan();
     $this->view('template/header');
-    $this->view('pemesanan', $data);
+    $this->view('pemesanan/pemesanan', $data);
     $this->view('template/sidebar');
     $this->view('template/footer');
   }

@@ -64,4 +64,30 @@ class Denda_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getDendaById($id)
+  {
+    $this->db->query("SELECT * FROM denda WHERE ID_DENDA =:id");
+    $this->db->bind('id', $id);
+    return $this->db->single();
+  }
+
+  public function updateDenda($request)
+  {
+    $this->db->query("UPDATE denda SET denda = :denda WHERE ID_DENDA = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('denda', $request['denda']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+
+  public function deleteDenda($id)
+  {
+    $this->db->query("DELETE FROM denda WHERE ID_DENDA = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

@@ -31,4 +31,39 @@ class Denda extends Controller
       exit;
     }
   }
+
+  public function edit($id)
+  {
+    $data['edit'] = $this->model('Denda_model')->getDendaById($id);
+    $this->view('template/header');
+    $this->view('denda/edit', $data);
+    $this->view('template/sidebar');
+    $this->view('template/footer');
+  }
+
+  public function update()
+  {
+    if ($this->model('Denda_model')->updateDenda($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Di update', 'success');
+      header("Location: " . BASEURL . '/denda');
+      exit;
+    } else {
+      Flasher::setFlash('Gagal!!!', 'Di update', 'danger');
+      header("Location: " . BASEURL . "/denda");
+      exit;
+    }
+  }
+
+  public function delete($id)
+  {
+    if ($this->model('Denda_model')->deleteDenda($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Di delete', 'success');
+      header("Location: " . BASEURL . '/denda');
+      exit;
+    } else {
+      Flasher::setFlash('Gagal!!!', 'Di delete', 'danger');
+      header("Location: " . BASEURL . "/denda");
+      exit;
+    }
+  }
 }

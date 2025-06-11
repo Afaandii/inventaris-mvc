@@ -41,16 +41,17 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['denda'] as $den) { ?>
-                        <tr>
-                          <td><?php echo $i; ?></td>
-                          <td>
-                            <a href="updateDenda.php?id=<?php echo $den["ID_DENDA"]; ?>">Update</a> |
-                            <a href="hapusDenda.php?id=<?php echo $den["ID_DENDA"]; ?>">Delete</a>
-                          </td>
-                          <td><?php echo $den["KODE_DENDA"]; ?></td>
-                          <td><?php echo $den["DENDA"]; ?></td>
-                        </tr>
-                        <?php $i++; ?>
+                      <tr>
+                        <td><?php echo $i; ?></td>
+                        <td>
+                          <a href="<?= BASEURL ?>/denda/edit/<?php echo $den["ID_DENDA"]; ?>">Update</a> |
+                          <a href="<?= BASEURL ?>/denda/delete/<?php echo $den["ID_DENDA"]; ?>"
+                            onclick="return confirm('Anda Yakin Mau Hapus Data?')">Delete</a>
+                        </td>
+                        <td><?php echo $den["KODE_DENDA"]; ?></td>
+                        <td><?php echo $den["DENDA"]; ?></td>
+                      </tr>
+                      <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>

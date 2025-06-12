@@ -60,4 +60,13 @@ class Jabatan_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deleteJabatan($id)
+  {
+    $this->db->query("DELETE FROM jabatan WHERE ID_JABATAN = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

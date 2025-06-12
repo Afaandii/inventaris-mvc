@@ -53,4 +53,17 @@ class Jabatan extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model('Jabatan_model')->deleteJabatan($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Di hapus', 'success');
+      header("Location: " . BASEURL . "/jabatan");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Di hapus', 'danger');
+      header("Location: " . BASEURL . "/jabatan");
+      die;
+    }
+  }
 }

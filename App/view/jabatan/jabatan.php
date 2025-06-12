@@ -42,7 +42,8 @@
                           <td><?php echo $i; ?></td>
                           <td>
                             <a href="<?= BASEURL ?>/jabatan/edit/<?= $jabs["ID_JABATAN"]; ?>">Update</a> |
-                            <a href="hapusJabatan.php?id=<?= $jabs["ID_JABATAN"]; ?>">Delete</a>
+                            <a href="<?= BASEURL ?>/jabatan/delete/<?= $jabs["ID_JABATAN"]; ?>"
+                              onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
                           </td>
                           <td><?= $jabs["KODE_JABATAN"]; ?></td>
                           <td><?php echo $jabs["NAMA_JABATAN"]; ?></td>

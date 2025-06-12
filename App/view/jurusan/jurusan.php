@@ -41,7 +41,7 @@
                         <tr>
                           <td><?php echo $i; ?></td>
                           <td>
-                            <a href="updateJurusan.php?id=<?php echo $jur["ID_JURUSAN"]; ?>">Update</a> |
+                            <a href="<?= BASEURL ?>/jurusan/edit/<?php echo $jur["ID_JURUSAN"]; ?>">Update</a> |
                             <a href="hapusJurusan.php?id=<?php echo $jur["ID_JURUSAN"]; ?>">Delete</a>
                           </td>
                           <td><?= $jur["KODE_JURUSAN"]; ?></td>

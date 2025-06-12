@@ -41,4 +41,23 @@ class Jurusan_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getJurusanById($id)
+  {
+    $this->db->query("SELECT * FROM jurusan WHERE ID_JURUSAN = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
+
+  public function updateJurusan($request)
+  {
+    $this->db->query("UPDATE jurusan SET KODE_JURUSAN = :kode, NAMA_JURUSAN = :jurusan WHERE ID_JURUSAN = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('jurusan', $request['jurusan']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

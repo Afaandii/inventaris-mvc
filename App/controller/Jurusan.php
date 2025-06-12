@@ -31,4 +31,26 @@ class Jurusan extends Controller
       die;
     }
   }
+
+  public function edit($id)
+  {
+    $data['jurusan'] = $this->model('Jurusan_model')->getJurusanById($id);
+    $this->view('template/header');
+    $this->view('jurusan/edit', $data);
+    $this->view('template/sidebar');
+    $this->view('template/footer');
+  }
+
+  public function update()
+  {
+    if ($this->model('Jurusan_model')->updateJurusan($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      header("Location: " . BASEURL . "/jurusan");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      header("Location: " . BASEURL . "/jurusan");
+      die;
+    }
+  }
 }

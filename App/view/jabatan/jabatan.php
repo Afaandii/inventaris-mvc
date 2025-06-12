@@ -14,6 +14,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+      <?php Flasher::flash(); ?>
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -37,20 +38,20 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['jabatan'] as $jabs) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="updateJabatan.php?id=<?= $jabs["ID_JABATAN"]; ?>">Update</a> |
-                          <a href="hapusJabatan.php?id=<?= $jabs["ID_JABATAN"]; ?>">Delete</a>
-                        </td>
-                        <td><?= $jabs["KODE_JABATAN"]; ?></td>
-                        <td><?php echo $jabs["NAMA_JABATAN"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a href="updateJabatan.php?id=<?= $jabs["ID_JABATAN"]; ?>">Update</a> |
+                            <a href="hapusJabatan.php?id=<?= $jabs["ID_JABATAN"]; ?>">Delete</a>
+                          </td>
+                          <td><?= $jabs["KODE_JABATAN"]; ?></td>
+                          <td><?php echo $jabs["NAMA_JABATAN"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createJabatan.php">Tambah Jabatan</a>
+                  <a href="<?= BASEURL ?>/jabatan/create">Tambah Jabatan</a>
                 </div>
                 <!-- /.card-body -->
               </div>

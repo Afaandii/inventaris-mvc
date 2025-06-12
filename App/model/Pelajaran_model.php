@@ -60,4 +60,13 @@ class Pelajaran_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deletePelajaran($id)
+  {
+    $this->db->query("DELETE FROM pelajaran WHERE ID_PELAJARAN = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

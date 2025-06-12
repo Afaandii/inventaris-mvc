@@ -17,7 +17,7 @@ class Hari_model
 
   public function generateKode()
   {
-    $this->db->query("SELECT max(KODE_DENDA) as kodeTerbesar FROM denda");
+    $this->db->query("SELECT max(KODE_HARI) as kodeTerbesar FROM hari");
     $data = $this->db->single();
 
     $kodeDenda = $data ? $data["kodeTerbesar"] : null;
@@ -37,6 +37,34 @@ class Hari_model
     $this->db->query("INSERT INTO hari VALUES('', :kode, :hari)");
     $this->db->bind('kode', $request['kodeHar']);
     $this->db->bind('hari', $request['hari']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+
+  public function getHariById($id)
+  {
+    $this->db->query("SELECT * FROM hari WHERE ID_HARI = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
+
+  public function updateHari($request)
+  {
+    $this->db->query("UPDATE hari SET KODE_HARI = :kode, NAMA_HARI = :hari WHERE ID_HARI = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kodeHar']);
+    $this->db->bind('hari', $request['hari']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+
+  public function deleteHari($id)
+  {
+    $this->db->query("DELETE FROM hari WHERE ID_HARI = :id");
+    $this->db->bind('id', $id);
 
     $this->db->execute();
     return $this->db->rowCount();

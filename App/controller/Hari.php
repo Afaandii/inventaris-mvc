@@ -31,4 +31,39 @@ class Hari extends Controller
       exit;
     }
   }
+
+  public function edit($id)
+  {
+    $data['hari'] = $this->model('Hari_model')->getHariById($id);
+    $this->view('template/header');
+    $this->view('hari/edit', $data);
+    $this->view('template/sidebar');
+    $this->view('template/footer');
+  }
+
+  public function update()
+  {
+    if ($this->model('Hari_model')->updateHari($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Di Update', 'success');
+      header("Location: " . BASEURL . "/hari");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Di Update', 'danger');
+      header("Location: " . BASEURL . "/hari");
+      die;
+    }
+  }
+
+  public function delete($id)
+  {
+    if ($this->model('Hari_model')->deleteHari($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Di Hapus', 'success');
+      header("Location: " . BASEURL . "/hari");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Di Hapus', 'danger');
+      header("Location: " . BASEURL . "/hari");
+      die;
+    }
+  }
 }

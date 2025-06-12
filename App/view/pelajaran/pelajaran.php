@@ -39,16 +39,16 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['pelajaran'] as $mapel) { ?>
-                        <tr>
-                          <td><?php echo $i; ?></td>
-                          <td>
-                            <a href="updatePelajaran.php?id=<?= $mapel["ID_PELAJARAN"]; ?>">Update</a> |
-                            <a href="hapusPelajaran.php?id=<?php echo $mapel["ID_PELAJARAN"]; ?>">Delete</a>
-                          </td>
-                          <td><?= $mapel["KODE_PELAJARAN"]; ?></td>
-                          <td><?php echo $mapel["NAMA_PELAJARAN"]; ?></td>
-                        </tr>
-                        <?php $i++; ?>
+                      <tr>
+                        <td><?php echo $i; ?></td>
+                        <td>
+                          <a href="<?= BASEURL ?>/pelajaran/edit/<?= $mapel["ID_PELAJARAN"]; ?>">Update</a> |
+                          <a href="hapusPelajaran.php?id=<?php echo $mapel["ID_PELAJARAN"]; ?>">Delete</a>
+                        </td>
+                        <td><?= $mapel["KODE_PELAJARAN"]; ?></td>
+                        <td><?php echo $mapel["NAMA_PELAJARAN"]; ?></td>
+                      </tr>
+                      <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>

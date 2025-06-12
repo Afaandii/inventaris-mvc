@@ -31,4 +31,26 @@ class Pelajaran extends Controller
       die;
     }
   }
+
+  public function edit($id)
+  {
+    $data['pelajaran'] = $this->model('Pelajaran_model')->getPelajaranById($id);
+    $this->view('template/header');
+    $this->view('pelajaran/edit', $data);
+    $this->view('template/sidebar');
+    $this->view('template/footer');
+  }
+
+  public function update()
+  {
+    if ($this->model('Pelajaran_model')->updatePelajaran($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      header("Location: " . BASEURL . "/pelajaran");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      header("Location: " . BASEURL . "/pelajaran");
+      die;
+    }
+  }
 }

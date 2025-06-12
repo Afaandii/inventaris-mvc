@@ -41,4 +41,23 @@ class Pelajaran_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getPelajaranById($id)
+  {
+    $this->db->query("SELECT * FROM pelajaran WHERE ID_PELAJARAN = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
+
+  public function updatePelajaran($request)
+  {
+    $this->db->query("UPDATE pelajaran SET KODE_PELAJARAN = :kode, NAMA_PELAJARAN = :pelajaran WHERE ID_PELAJARAN = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('pelajaran', $request['pelajaran']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

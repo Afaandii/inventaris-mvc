@@ -41,4 +41,23 @@ class Jabatan_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getJabatanById($id)
+  {
+    $this->db->query('SELECT * FROM jabatan WHERE ID_JABATAN = :id');
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
+
+  public function updateJabatan($request)
+  {
+    $this->db->query("UPDATE jabatan SET KODE_JABATAN = :kode, NAMA_JABATAN = :jabatan WHERE ID_JABATAN = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('jabatan', $request['jabatan']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

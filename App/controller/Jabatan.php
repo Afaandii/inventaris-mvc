@@ -31,4 +31,26 @@ class Jabatan extends Controller
       die;
     }
   }
+
+  public function edit($id)
+  {
+    $data['jabatan'] = $this->model('Jabatan_model')->getJabatanById($id);
+    $this->view('template/header');
+    $this->view('jabatan/edit', $data);
+    $this->view('template/sidebar');
+    $this->view('template/footer');
+  }
+
+  public function update()
+  {
+    if ($this->model('Jabatan_model')->updateJabatan($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Di update', 'success');
+      header("Location: " . BASEURL . "/jabatan");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Di update', 'danger');
+      header("Location: " . BASEURL . "/jabatan");
+      die;
+    }
+  }
 }

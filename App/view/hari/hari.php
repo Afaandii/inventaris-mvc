@@ -14,6 +14,8 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+
+      <?php Flasher::flash() ?>
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -37,20 +39,20 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['hari'] as $har) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="updateHari.php?id=<?= $har["ID_HARI"]; ?>">Update</a> |
-                          <a href="hapusHari.php?id=<?= $har["ID_HARI"]; ?>">Delete</a>
-                        </td>
-                        <td><?= $har["KODE_HARI"]; ?></td>
-                        <td><?php echo $har["NAMA_HARI"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a href="updateHari.php?id=<?= $har["ID_HARI"]; ?>">Update</a> |
+                            <a href="hapusHari.php?id=<?= $har["ID_HARI"]; ?>">Delete</a>
+                          </td>
+                          <td><?= $har["KODE_HARI"]; ?></td>
+                          <td><?php echo $har["NAMA_HARI"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createHari.php">Tambah Hari</a>
+                  <a href="<?= BASEURL ?>/hari/create">Tambah Hari</a>
                 </div>
                 <!-- /.card-body -->
               </div>

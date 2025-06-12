@@ -14,6 +14,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+      <?php Flasher::flash(); ?>
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -37,20 +38,20 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['jurusan'] as $jur) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="updateJurusan.php?id=<?php echo $jur["ID_JURUSAN"]; ?>">Update</a> |
-                          <a href="hapusJurusan.php?id=<?php echo $jur["ID_JURUSAN"]; ?>">Delete</a>
-                        </td>
-                        <td><?= $jur["KODE_JURUSAN"]; ?></td>
-                        <td><?php echo $jur["NAMA_JURUSAN"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a href="updateJurusan.php?id=<?php echo $jur["ID_JURUSAN"]; ?>">Update</a> |
+                            <a href="hapusJurusan.php?id=<?php echo $jur["ID_JURUSAN"]; ?>">Delete</a>
+                          </td>
+                          <td><?= $jur["KODE_JURUSAN"]; ?></td>
+                          <td><?php echo $jur["NAMA_JURUSAN"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createJurusan.php">Tambah Jurusan</a>
+                  <a href="<?= BASEURL ?>/jurusan/create">Tambah Jurusan</a>
                 </div>
                 <!-- /.card-body -->
               </div>

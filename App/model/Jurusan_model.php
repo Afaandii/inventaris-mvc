@@ -60,4 +60,13 @@ class Jurusan_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deleteJurusan($id)
+  {
+    $this->db->query("DELETE FROM jurusan WHERE ID_JURUSAN = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

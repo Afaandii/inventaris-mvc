@@ -53,4 +53,17 @@ class Jurusan extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model('Jurusan_model')->deleteJurusan($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Didelete', 'success');
+      header("Location: " . BASEURL . "/jurusan");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Didelete', 'danger');
+      header("Location: " . BASEURL . "/jurusan");
+      die;
+    }
+  }
 }

@@ -42,7 +42,8 @@
                           <td><?php echo $i; ?></td>
                           <td>
                             <a href="<?= BASEURL ?>/jurusan/edit/<?php echo $jur["ID_JURUSAN"]; ?>">Update</a> |
-                            <a href="hapusJurusan.php?id=<?php echo $jur["ID_JURUSAN"]; ?>">Delete</a>
+                            <a href="<?= BASEURL ?>/jurusan/delete/<?php echo $jur["ID_JURUSAN"]; ?>"
+                              onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
                           </td>
                           <td><?= $jur["KODE_JURUSAN"]; ?></td>
                           <td><?php echo $jur["NAMA_JURUSAN"]; ?></td>

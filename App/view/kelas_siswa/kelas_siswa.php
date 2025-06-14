@@ -43,7 +43,7 @@
                       <tr>
                         <td><?php echo $i; ?></td>
                         <td>
-                          <a href="updateKelasSiswa.php?id=<?php echo $kelSis["ID_KELASSISWA"]; ?>">Update</a> |
+                          <a href="<?= BASEURL ?>/kelas_siswa/edit/<?php echo $kelSis["ID_KELASSISWA"]; ?>">Update</a> |
                           <a href="hapusKelasSiswa.php?id=<?= $kelSis["ID_KELASSISWA"]; ?>">Delete</a>
                         </td>
                         <td><?= $kelSis["KODE_KELASSISWA"]; ?></td>

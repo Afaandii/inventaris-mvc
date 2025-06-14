@@ -33,4 +33,28 @@ class Kelas_siswa extends Controller
       die;
     }
   }
+
+  public function edit($id)
+  {
+    $data['jurusan'] = $this->model('Kelas_siswa_model')->getDataJurusan();
+    $data['kelas'] = $this->model('Kelas_siswa_model')->getDataKelas();
+    $data['kelas_sis'] = $this->model('Kelas_siswa_model')->getKelasSiswaById($id);
+    $this->view('template/header');
+    $this->view('kelas_siswa/edit', $data);
+    $this->view('template/sidebar');
+    $this->view('template/footer');
+  }
+
+  public function update()
+  {
+    if ($this->model('Kelas_siswa_model')->updateKelasSiswa($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      header('Location: ' . BASEURL . "/kelas_siswa");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      header('Location: ' . BASEURL . "/kelas_siswa");
+      die;
+    }
+  }
 }

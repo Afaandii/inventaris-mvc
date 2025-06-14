@@ -38,16 +38,16 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['kelas'] as $kel) { ?>
-                        <tr>
-                          <td><?php echo $i; ?></td>
-                          <td>
-                            <a href="updateKelas.php?id=<?php echo $kel["ID_KELAS"]; ?>">Update</a> |
-                            <a href="hapusKelas.php?id=<?php echo $kel["ID_KELAS"]; ?>">Delete</a>
-                          </td>
-                          <td><?= $kel["KODE_KELAS"]; ?></td>
-                          <td><?php echo $kel["NAMA_KELAS"]; ?></td>
-                        </tr>
-                        <?php $i++; ?>
+                      <tr>
+                        <td><?php echo $i; ?></td>
+                        <td>
+                          <a href="<?= BASEURL ?>/kelas/edit/<?php echo $kel["ID_KELAS"]; ?>">Update</a> |
+                          <a href="hapusKelas.php?id=<?php echo $kel["ID_KELAS"]; ?>">Delete</a>
+                        </td>
+                        <td><?= $kel["KODE_KELAS"]; ?></td>
+                        <td><?php echo $kel["NAMA_KELAS"]; ?></td>
+                      </tr>
+                      <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>

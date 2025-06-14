@@ -31,4 +31,26 @@ class Kelas extends Controller
       exit;
     }
   }
+
+  public function edit($id)
+  {
+    $data['kelas'] = $this->model('Kelas_model')->getKelasById($id);
+    $this->view('template/header');
+    $this->view('kelas/edit', $data);
+    $this->view('template/sidebar');
+    $this->view('template/footer');
+  }
+
+  public function update()
+  {
+    if ($this->model('Kelas_model')->updateKelas($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      header("Location: " . BASEURL . "/kelas");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      header("Location: " . BASEURL . "/kelas");
+      die;
+    }
+  }
 }

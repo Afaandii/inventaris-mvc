@@ -41,4 +41,23 @@ class Kelas_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getKelasById($id)
+  {
+    $this->db->query("SELECT * FROM kelas WHERE ID_KELAS = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
+
+  public function updateKelas($request)
+  {
+    $this->db->query("UPDATE kelas SET KODE_KELAS = :kode, NAMA_KELAS = :kelas WHERE ID_KELAS = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('kelas', $request['kelas']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

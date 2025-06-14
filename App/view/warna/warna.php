@@ -41,7 +41,7 @@
                       <tr>
                         <td><?php echo $i; ?></td>
                         <td>
-                          <a href="updateWarna.php?id=<?= $war["ID_WARNA"]; ?>">Update</a> |
+                          <a href="<?= BASEURL ?>/warna/edit/<?= $war["ID_WARNA"]; ?>">Update</a> |
                           <a href="hapusWarna.php?id=<?= $war["ID_WARNA"]; ?>">Delete</a>
                         </td>
                         <td><?= $war["KODE_WARNA"]; ?></td>

@@ -41,4 +41,23 @@ class Warna_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getWarnaById($id)
+  {
+    $this->db->query("SELECT * FROM warna WHERE ID_WARNA = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
+
+  public function updateWarna($request)
+  {
+    $this->db->query("UPDATE warna SET KODE_WARNA = :warna, NAMA_WARNA = :warna WHERE ID_WARNA = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('warna', $request['warna']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

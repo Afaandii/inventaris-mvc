@@ -14,6 +14,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+      <?php Flasher::flash() ?>
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -39,22 +40,22 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['pemesanan'] as $pesan) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="updatePemesanan.php?id=<?php echo $pesan["ID_PEMESANAN"]; ?>">Update</a> |
-                          <a href="hapusPemesanan.php?id=<?php echo $pesan["ID_PEMESANAN"]; ?>">Delete</a>
-                        </td>
-                        <td><?= $pesan["KODE_PEMESANAN"]; ?></td>
-                        <td><?= $pesan['USERNAME_PEMINJAM']; ?></td>
-                        <td><?php echo $pesan["STATUS_PEMESANAN"]; ?></td>
-                        <td><?php echo $pesan["TANGGAL_PEMESANAN"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a href="updatePemesanan.php?id=<?php echo $pesan["ID_PEMESANAN"]; ?>">Update</a> |
+                            <a href="hapusPemesanan.php?id=<?php echo $pesan["ID_PEMESANAN"]; ?>">Delete</a>
+                          </td>
+                          <td><?= $pesan["KODE_PEMESANAN"]; ?></td>
+                          <td><?= $pesan['USERNAME_PEMINJAM']; ?></td>
+                          <td><?php echo $pesan["STATUS_PEMESANAN"]; ?></td>
+                          <td><?php echo $pesan["TANGGAL_PEMESANAN"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createPemesanan.php">Tambah Pemesanan</a>
+                  <a href="<?= BASEURL ?>/pemesanan/create">Tambah Pemesanan</a>
                 </div>
                 <!-- /.card-body -->
               </div>

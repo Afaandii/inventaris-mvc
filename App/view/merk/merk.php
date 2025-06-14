@@ -14,6 +14,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+      <?php Flasher::flash() ?>
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -50,7 +51,7 @@
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createMerk.php">Tambah Merek</a>
+                  <a href="<?= BASEURL ?>/merk/create">Tambah Merek</a>
                 </div>
                 <!-- /.card-body -->
               </div>

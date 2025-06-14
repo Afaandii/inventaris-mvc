@@ -14,4 +14,31 @@ class Merk_model
     $this->db->query("SELECT * FROM " . $this->table);
     return $this->db->resultSet();
   }
+
+  public function generateKode()
+  {
+    $this->db->query("SELECT max(KODE_MERK) as kodeTerbesar FROM merk");
+    $data = $this->db->single();
+
+    $kodeDenda = $data ? $data["kodeTerbesar"] : null;
+
+    $urutan = (int) substr($kodeDenda, 3, 3) ?: 5;
+
+    $urutan++;
+
+    $huruf = "MRK";
+
+    $kodeDenda = $huruf . sprintf("%03s", $urutan);
+    return $kodeDenda;
+  }
+
+  public function insertMerk($request)
+  {
+    $this->db->query("INSERT INTO merk VALUES('', :kode, :merk)");
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('merk', $request['merk']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

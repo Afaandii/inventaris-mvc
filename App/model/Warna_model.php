@@ -52,10 +52,19 @@ class Warna_model
 
   public function updateWarna($request)
   {
-    $this->db->query("UPDATE warna SET KODE_WARNA = :warna, NAMA_WARNA = :warna WHERE ID_WARNA = :id");
+    $this->db->query("UPDATE warna SET KODE_WARNA = :kode, NAMA_WARNA = :warna WHERE ID_WARNA = :id");
     $this->db->bind('id', $request['id']);
     $this->db->bind('kode', $request['kode']);
     $this->db->bind('warna', $request['warna']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+
+  public function deleteWarna($id)
+  {
+    $this->db->query("DELETE FROM warna WHERE ID_WARNA = :id");
+    $this->db->bind('id', $id);
 
     $this->db->execute();
     return $this->db->rowCount();

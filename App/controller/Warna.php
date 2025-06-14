@@ -53,4 +53,17 @@ class Warna extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model('Warna_model')->deleteWarna($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      header("Location: " . BASEURL . "/warna");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      header("Location: " . BASEURL . "/warna");
+      die;
+    }
+  }
 }

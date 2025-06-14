@@ -42,7 +42,8 @@
                         <td><?php echo $i; ?></td>
                         <td>
                           <a href="<?= BASEURL ?>/warna/edit/<?= $war["ID_WARNA"]; ?>">Update</a> |
-                          <a href="hapusWarna.php?id=<?= $war["ID_WARNA"]; ?>">Delete</a>
+                          <a href="<?= BASEURL ?>/warna/delete/<?= $war["ID_WARNA"]; ?>"
+                            onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
                         </td>
                         <td><?= $war["KODE_WARNA"]; ?></td>
                         <td><?php echo $war["NAMA_WARNA"]; ?></td>

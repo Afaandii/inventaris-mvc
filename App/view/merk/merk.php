@@ -41,7 +41,7 @@
                       <tr>
                         <td><?php echo $i; ?></td>
                         <td>
-                          <a href="updateMerk.php?id=<?= $mer["ID_MERK"]; ?>">Update</a> |
+                          <a href="<?= BASEURL ?>/merk/edit/<?= $mer["ID_MERK"]; ?>">Update</a> |
                           <a href="hapusMerk.php?id=<?= $mer["ID_MERK"]; ?>">Delete</a>
                         </td>
                         <td><?= $mer["KODE_MERK"]; ?></td>

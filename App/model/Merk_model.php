@@ -41,4 +41,23 @@ class Merk_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getMerkById($id)
+  {
+    $this->db->query("SELECT * FROM merk WHERE ID_MERK = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
+
+  public function updateMerk($request)
+  {
+    $this->db->query("UPDATE merk SET KODE_MERK = :kode, NAMA_MEREK = :merk WHERE ID_MERK = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('merk', $request['merk']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

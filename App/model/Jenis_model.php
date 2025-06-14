@@ -41,4 +41,23 @@ class Jenis_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getJenisById($id)
+  {
+    $this->db->query("SELECT * FROM jenis WHERE ID_JENIS = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
+
+  public function updateJenis($request)
+  {
+    $this->db->query("UPDATE jenis SET KODE_JENIS = :kode, NAMA_JENIS = :jenis WHERE ID_JENIS = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('jenis', $request['jenis']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

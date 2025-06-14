@@ -40,7 +40,7 @@
                       <tr>
                         <td><?php echo $i; ?></td>
                         <td>
-                          <a href="updateJenis.php?id=<?= $jen["ID_JENIS"]; ?>">Update</a> |
+                          <a href="<?= BASEURL ?>/jenis/edit/<?= $jen["ID_JENIS"]; ?>">Update</a> |
                           <a href="hapusJenis.php?id=<?php echo $jen["ID_JENIS"]; ?>">Delete</a>
                         </td>
                         <td><?= $jen["KODE_JENIS"]; ?></td>

@@ -31,4 +31,26 @@ class Jenis extends Controller
       die;
     }
   }
+
+  public function edit($id)
+  {
+    $data['jenis'] = $this->model('Jenis_model')->getJenisById($id);
+    $this->view('template/header');
+    $this->view('jenis/edit', $data);
+    $this->view('template/sidebar');
+    $this->view('template/footer');
+  }
+
+  public function update()
+  {
+    if ($this->model('Jenis_model')->updateJenis($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      header("Location: " . BASEURL . "/jenis");
+      exit;
+    } else {
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      header("Location: " . BASEURL . "/jenis");
+      exit;
+    }
+  }
 }

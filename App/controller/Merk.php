@@ -53,4 +53,17 @@ class Merk extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model('Merk_model')->deleteMerk($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      header("Location: " . BASEURL . "/merk");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      header("Location: " . BASEURL . "/merk");
+      die;
+    }
+  }
 }

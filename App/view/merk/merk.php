@@ -42,7 +42,8 @@
                         <td><?php echo $i; ?></td>
                         <td>
                           <a href="<?= BASEURL ?>/merk/edit/<?= $mer["ID_MERK"]; ?>">Update</a> |
-                          <a href="hapusMerk.php?id=<?= $mer["ID_MERK"]; ?>">Delete</a>
+                          <a href="<?= BASEURL ?>/merk/delete/<?= $mer["ID_MERK"]; ?>"
+                            onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
                         </td>
                         <td><?= $mer["KODE_MERK"]; ?></td>
                         <td><?php echo $mer["NAMA_MEREK"]; ?></td>

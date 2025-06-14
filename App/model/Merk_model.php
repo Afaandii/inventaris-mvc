@@ -60,4 +60,13 @@ class Merk_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deleteMerk($id)
+  {
+    $this->db->query("DELETE FROM merk WHERE ID_MERK = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

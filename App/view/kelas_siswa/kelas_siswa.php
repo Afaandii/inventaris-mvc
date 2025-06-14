@@ -44,7 +44,8 @@
                         <td><?php echo $i; ?></td>
                         <td>
                           <a href="<?= BASEURL ?>/kelas_siswa/edit/<?php echo $kelSis["ID_KELASSISWA"]; ?>">Update</a> |
-                          <a href="hapusKelasSiswa.php?id=<?= $kelSis["ID_KELASSISWA"]; ?>">Delete</a>
+                          <a href="<?= BASEURL ?>/kelas_siswa/delete/<?= $kelSis["ID_KELASSISWA"]; ?>"
+                            onclick="return confirm('Apakah yakin menghapus data?')">Delete</a>
                         </td>
                         <td><?= $kelSis["KODE_KELASSISWA"]; ?></td>
                         <td><?= $kelSis["NAMA_KELASSISWA"]; ?></td>

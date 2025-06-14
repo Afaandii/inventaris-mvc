@@ -76,4 +76,13 @@ class Kelas_siswa_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deleteKelasSiswa($id)
+  {
+    $this->db->query("DELETE FROM kelas_siswa WHERE ID_KELASSISWA = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

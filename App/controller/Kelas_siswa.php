@@ -57,4 +57,17 @@ class Kelas_siswa extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model('Kelas_siswa_model')->deleteKelasSiswa($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      header("Location: " . BASEURL . "/kelas_siswa");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      header("Location: " . BASEURL . "/kelas_siswa");
+      die;
+    }
+  }
 }

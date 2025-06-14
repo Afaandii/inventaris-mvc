@@ -55,4 +55,17 @@ class Pemesanan extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model('Pemesanan_model')->deletePemesanan($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      header("Location: " . BASEURL . "/pemesanan");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      header("Location: " . BASEURL . "/pemesanan");
+      die;
+    }
+  }
 }

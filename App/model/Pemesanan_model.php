@@ -70,4 +70,13 @@ class Pemesanan_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deletePemesanan($id)
+  {
+    $this->db->query("DELETE FROM pemesanan WHERE ID_PEMESANAN = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

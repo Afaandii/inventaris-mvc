@@ -43,7 +43,7 @@
                         <tr>
                           <td><?php echo $i; ?></td>
                           <td>
-                            <a href="updatePemesanan.php?id=<?php echo $pesan["ID_PEMESANAN"]; ?>">Update</a> |
+                            <a href="<?= BASEURL ?>/pemesanan/edit/<?php echo $pesan["ID_PEMESANAN"]; ?>">Update</a> |
                             <a href="hapusPemesanan.php?id=<?php echo $pesan["ID_PEMESANAN"]; ?>">Delete</a>
                           </td>
                           <td><?= $pesan["KODE_PEMESANAN"]; ?></td>

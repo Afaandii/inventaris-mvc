@@ -49,4 +49,25 @@ class Pemesanan_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getPemesananById($id)
+  {
+    $this->db->query("SELECT *, peminjam.ID_PEMINJAM, peminjam.USERNAME_PEMINJAM FROM pemesanan INNER JOIN peminjam ON peminjam.ID_PEMINJAM = pemesanan.ID_PEMINJAM WHERE ID_PEMESANAN = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
+
+  public function updatePemesanan($request)
+  {
+    $this->db->query("UPDATE pemesanan SET KODE_PEMESANAN = :kode, ID_PEMINJAM = :peminjam, TANGGAL_PEMESANAN = :tgl_pemesanan, STATUS_PEMESANAN = :sts_pemesanan WHERE ID_PEMESANAN = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('peminjam', $request['peminjam']);
+    $this->db->bind('tgl_pemesanan', $request['tgl_pemesanan']);
+    $this->db->bind('sts_pemesanan', $request['sts_pemesanan']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

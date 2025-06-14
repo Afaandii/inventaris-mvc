@@ -20,7 +20,7 @@
           <div class="card card-primary">
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="" method="post">
+            <form action="<?= BASEURL ?>/pemesanan/update" method="post">
               <input type="hidden" name="id" value="<?php echo $data['pemesanan']["ID_PEMESANAN"]; ?>">
               <div class="card-body">
                 <div class="form-group">

@@ -14,6 +14,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+      <?php Flasher::flash(); ?>
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -54,7 +55,7 @@
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createKelasSiswa.php">Tambah Kelas Siswa</a>
+                  <a href="<?= BASEURL ?>/kelas_siswa/create">Tambah Kelas Siswa</a>
                 </div>
                 <!-- /.card-body -->
               </div>

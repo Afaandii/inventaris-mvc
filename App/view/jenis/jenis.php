@@ -16,6 +16,7 @@
     <div class="container-fluid">
       <section class="content">
         <div class="container-fluid">
+          <?php Flasher::flash() ?>
           <div class="row">
             <div class="col-12">
               <div class="card">
@@ -49,7 +50,7 @@
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createJenis.php">Tambah Jenis</a>
+                  <a href="<?= BASEURL ?>/jenis/create">Tambah Jenis</a>
                 </div>
                 <!-- /.card-body -->
               </div>

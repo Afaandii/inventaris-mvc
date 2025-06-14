@@ -41,7 +41,8 @@
                         <td><?php echo $i; ?></td>
                         <td>
                           <a href="<?= BASEURL ?>/jenis/edit/<?= $jen["ID_JENIS"]; ?>">Update</a> |
-                          <a href="hapusJenis.php?id=<?php echo $jen["ID_JENIS"]; ?>">Delete</a>
+                          <a href="<?= BASEURL ?>/jenis/delete/<?php echo $jen["ID_JENIS"]; ?>"
+                            onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
                         </td>
                         <td><?= $jen["KODE_JENIS"]; ?></td>
                         <td><?php echo $jen["NAMA_JENIS"]; ?></td>

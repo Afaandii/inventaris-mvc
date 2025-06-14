@@ -60,4 +60,13 @@ class Jenis_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deleteJenis($id)
+  {
+    $this->db->query("DELETE FROM jenis WHERE ID_JENIS = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

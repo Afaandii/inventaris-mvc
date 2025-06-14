@@ -53,4 +53,17 @@ class Jenis extends Controller
       exit;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model('Jenis_model')->deleteJenis($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      header("Location: " . BASEURL . "/jenis");
+      exit;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      header("Location: " . BASEURL . "/jenis");
+      exit;
+    }
+  }
 }

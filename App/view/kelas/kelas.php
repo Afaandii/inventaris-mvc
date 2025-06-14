@@ -42,7 +42,8 @@
                         <td><?php echo $i; ?></td>
                         <td>
                           <a href="<?= BASEURL ?>/kelas/edit/<?php echo $kel["ID_KELAS"]; ?>">Update</a> |
-                          <a href="hapusKelas.php?id=<?php echo $kel["ID_KELAS"]; ?>">Delete</a>
+                          <a href="<?= BASEURL ?>/kelas/delete/<?php echo $kel["ID_KELAS"]; ?>"
+                            onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
                         </td>
                         <td><?= $kel["KODE_KELAS"]; ?></td>
                         <td><?php echo $kel["NAMA_KELAS"]; ?></td>

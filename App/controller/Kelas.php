@@ -53,4 +53,17 @@ class Kelas extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model('Kelas_model')->deleteKelas($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      header("Location: " . BASEURL . "/kelas");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      header("Location: " . BASEURL . "/kelas");
+      die;
+    }
+  }
 }

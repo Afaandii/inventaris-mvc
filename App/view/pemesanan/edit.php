@@ -25,7 +25,8 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Pemesanan</label>
-                  <input type="text" name="kode" id="kode" value="<?= $data['pemesanan'] ?>" readonly> <br>
+                  <input type="text" name="kode" id="kode" value="<?= $data['pemesanan']['KODE_PEMESANAN'] ?>" readonly>
+                  <br>
                   <label for="peminjam">Peminjam</label>
                   <select name="peminjam" id="peminjam">
                     <?php foreach ($data['peminjam'] as $peminjam): ?>

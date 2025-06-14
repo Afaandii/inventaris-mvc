@@ -32,4 +32,27 @@ class Pemesanan extends Controller
       die;
     }
   }
+
+  public function edit($id)
+  {
+    $data['pemesanan'] = $this->model('Pemesanan_model')->getPemesananById($id);
+    $data['peminjam'] = $this->model('Pemesanan_model')->getDataPeminjam();
+    $this->view('template/header');
+    $this->view('pemesanan/edit', $data);
+    $this->view('template/sidebar');
+    $this->view('template/footer');
+  }
+
+  public function update()
+  {
+    if ($this->model("Pemesanan_model")->updatePemesanan($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      header("Location: " . BASEURL . "/pemesanan");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      header("Location: " . BASEURL . "/pemesanan");
+      die;
+    }
+  }
 }

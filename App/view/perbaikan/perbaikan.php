@@ -43,7 +43,8 @@
                           <td><?php echo $i; ?></td>
                           <td>
                             <a href="<?= BASEURL ?>/perbaikan/edit/<?= $per["ID_PERBAIKAN"]; ?>">Update</a> |
-                            <a href="hapusPerbaikan.php?id=<?= $per["ID_PERBAIKAN"]; ?>">Delete</a>
+                            <a href="<?= BASEURL ?>/perbaikan/delete/<?= $per["ID_PERBAIKAN"]; ?>"
+                              onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
                           </td>
                           <td><?= $per["KODE_PERBAIKAN"]; ?></td>
                           <td><?= $per["NAMA_GURU"]; ?></td>

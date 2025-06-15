@@ -70,4 +70,13 @@ class Perbaikan_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deletePerbaikan($id)
+  {
+    $this->db->query("DELETE FROM perbaikan WHERE ID_PERBAIKAN = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

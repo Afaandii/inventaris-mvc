@@ -55,4 +55,17 @@ class Perbaikan extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model("Perbaikan_model")->deletePerbaikan($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      header("Location: " . BASEURL . "/perbaikan");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      header("Location: " . BASEURL . "/perbaikan");
+      die;
+    }
+  }
 }

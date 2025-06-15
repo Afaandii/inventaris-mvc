@@ -16,4 +16,38 @@ class Perbaikan_model
     );
     return $this->db->resultSet();
   }
+
+  public function getDataGuru()
+  {
+    $this->db->query("SELECT ID_GURU, NAMA_GURU FROM guru");
+    return $this->db->resultSet();
+  }
+
+  public function generateKode()
+  {
+    $this->db->query("SELECT max(KODE_PERBAIKAN) as kodeTerbesar FROM perbaikan");
+    $data = $this->db->single();
+
+    $kodeDenda = $data ? $data["kodeTerbesar"] : null;
+
+    $urutan = (int) substr($kodeDenda, 4, 4) ?: 5;
+
+    $urutan++;
+
+    $huruf = "PRBK";
+
+    $kodeDenda = $huruf . sprintf("%03s", $urutan);
+    return $kodeDenda;
+  }
+
+  public function insertPerbaikan($request)
+  {
+    $this->db->query("INSERT INTO perbaikan VALUES('', :kode, :guru, :tgl_perbaikan)");
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('guru', $request['guru']);
+    $this->db->bind('tgl_perbaikan', $request['tgl_perbaikan']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

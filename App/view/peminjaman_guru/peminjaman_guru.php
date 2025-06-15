@@ -45,7 +45,8 @@
                           <a
                             href="<?= BASEURL ?>/peminjaman_guru/edit/<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>">Update</a>
                           |
-                          <a href="hapusPeminjamanGuru.php?id=<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>">Delete</a>
+                          <a href="<?= BASEURL ?>/peminjaman_guru/delete/<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>"
+                            onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
                         </td>
                         <td><?= $pinGuru["KODE_PEMINJAMAN_GURU"]; ?></td>
                         <td><?= $pinGuru["USERNAME_PEMINJAM"]; ?></td>

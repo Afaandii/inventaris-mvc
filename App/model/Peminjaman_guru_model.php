@@ -70,4 +70,13 @@ class Peminjaman_guru_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deletePeminjamanGuru($id)
+  {
+    $this->db->query("DELETE FROM peminjaman_guru WHERE ID_PEMINJAMAN_GURU = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

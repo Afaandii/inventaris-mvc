@@ -55,4 +55,17 @@ class Peminjaman_guru extends Controller
       exit;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model("Peminjaman_guru_model")->deletePeminjamanGuru($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      header("Location: " . BASEURL . "/peminjaman_guru");
+      exit;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      header("Location: " . BASEURL . "/peminjaman_guru");
+      exit;
+    }
+  }
 }

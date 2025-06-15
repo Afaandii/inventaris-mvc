@@ -14,6 +14,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+      <?php Flasher::flash() ?>
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -31,26 +32,28 @@
                         <th>No</th>
                         <th>Aksi</th>
                         <th>Kode Perbaikan</th>
+                        <th>Nama Guru</th>
                         <th>Tanggal Perbaikan</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['perbaikan'] as $per) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="updatePerbaikan.php?id=<?= $per["ID_PERBAIKAN"]; ?>">Update</a> |
-                          <a href="hapusPerbaikan.php?id=<?= $per["ID_PERBAIKAN"]; ?>">Delete</a>
-                        </td>
-                        <td><?= $per["KODE_PERBAIKAN"]; ?></td>
-                        <td><?php echo $per["TANGGAL_PERBAIKAN"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a href="updatePerbaikan.php?id=<?= $per["ID_PERBAIKAN"]; ?>">Update</a> |
+                            <a href="hapusPerbaikan.php?id=<?= $per["ID_PERBAIKAN"]; ?>">Delete</a>
+                          </td>
+                          <td><?= $per["KODE_PERBAIKAN"]; ?></td>
+                          <td><?= $per["NAMA_GURU"]; ?></td>
+                          <td><?php echo $per["TANGGAL_PERBAIKAN"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createPerbaikan.php">Tambah Perbaikan</a>
+                  <a href="<?= BASEURL ?>/perbaikan/create">Tambah Perbaikan</a>
                 </div>
                 <!-- /.card-body -->
               </div>

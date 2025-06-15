@@ -16,4 +16,38 @@ class Peminjaman_guru_model
     );
     return $this->db->resultSet();
   }
+
+  public function generateKode()
+  {
+    $this->db->query("SELECT max(KODE_PEMINJAMAN_GURU) as kodeTerbesar FROM peminjaman_guru");
+    $data = $this->db->single();
+
+    $kodeDenda = $data ? $data["kodeTerbesar"] : null;
+
+    $urutan = (int) substr($kodeDenda, 8, 8) ?: 9;
+
+    $urutan++;
+
+    $huruf = "PMJMN_GR";
+
+    $kodeDenda = $huruf . sprintf("%03s", $urutan);
+    return $kodeDenda;
+  }
+
+  public function getDataPeminjam()
+  {
+    $this->db->query("SELECT USERNAME_PEMINJAM, ID_PEMINJAM FROM peminjam");
+    return $this->db->resultSet();
+  }
+
+  public function insertPeminjamanGuru($request)
+  {
+    $this->db->query("INSERT INTO peminjaman_guru VALUES('', :kode, :peminjam, :ket_peminjam)");
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('peminjam', $request['peminjam']);
+    $this->db->bind('ket_peminjam', $request['ket_peminjam']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

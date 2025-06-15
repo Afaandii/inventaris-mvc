@@ -14,6 +14,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+      <?php Flasher::flash() ?>
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -38,21 +39,21 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['peminjaman_guru'] as $pinGuru) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="updatePeminjamanGuru.php?id=<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>">Update</a> |
-                          <a href="hapusPeminjamanGuru.php?id=<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>">Delete</a>
-                        </td>
-                        <td><?= $pinGuru["KODE_PEMINJAMAN_GURU"]; ?></td>
-                        <td><?= $pinGuru["USERNAME_PEMINJAM"]; ?></td>
-                        <td><?php echo $pinGuru["KETERANGAN_PEMINJAMAN"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a href="updatePeminjamanGuru.php?id=<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>">Update</a> |
+                            <a href="hapusPeminjamanGuru.php?id=<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>">Delete</a>
+                          </td>
+                          <td><?= $pinGuru["KODE_PEMINJAMAN_GURU"]; ?></td>
+                          <td><?= $pinGuru["USERNAME_PEMINJAM"]; ?></td>
+                          <td><?= $pinGuru["KETERANGAN_PEMINJAMAN"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createPeminjamanGuru.php">Tambah Peminjaman Guru</a>
+                  <a href="<?= BASEURL ?>/peminjaman_guru/create">Tambah Peminjaman Guru</a>
                 </div>
                 <!-- /.card-body -->
               </div>

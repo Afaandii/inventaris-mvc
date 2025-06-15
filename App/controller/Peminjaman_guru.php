@@ -32,4 +32,27 @@ class Peminjaman_guru extends Controller
       exit;
     }
   }
+
+  public function edit($id)
+  {
+    $data['pin_gur'] = $this->model("Peminjaman_guru_model")->getPeminjamanGuruById($id);
+    $data['peminjam'] = $this->model("Peminjaman_guru_model")->getDataPeminjam();
+    $this->view('template/header');
+    $this->view('template/sidebar');
+    $this->view('peminjaman_guru/edit', $data);
+    $this->view('template/footer');
+  }
+
+  public function update()
+  {
+    if ($this->model("Peminjaman_guru_model")->updatePeminjamanGuru($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      header("Location: " . BASEURL . "/peminjaman_guru");
+      exit;
+    } else {
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      header("Location: " . BASEURL . "/peminjaman_guru");
+      exit;
+    }
+  }
 }

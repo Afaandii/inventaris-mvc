@@ -39,17 +39,19 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['peminjaman_guru'] as $pinGuru) { ?>
-                        <tr>
-                          <td><?php echo $i; ?></td>
-                          <td>
-                            <a href="updatePeminjamanGuru.php?id=<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>">Update</a> |
-                            <a href="hapusPeminjamanGuru.php?id=<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>">Delete</a>
-                          </td>
-                          <td><?= $pinGuru["KODE_PEMINJAMAN_GURU"]; ?></td>
-                          <td><?= $pinGuru["USERNAME_PEMINJAM"]; ?></td>
-                          <td><?= $pinGuru["KETERANGAN_PEMINJAMAN"]; ?></td>
-                        </tr>
-                        <?php $i++; ?>
+                      <tr>
+                        <td><?php echo $i; ?></td>
+                        <td>
+                          <a
+                            href="<?= BASEURL ?>/peminjaman_guru/edit/<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>">Update</a>
+                          |
+                          <a href="hapusPeminjamanGuru.php?id=<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>">Delete</a>
+                        </td>
+                        <td><?= $pinGuru["KODE_PEMINJAMAN_GURU"]; ?></td>
+                        <td><?= $pinGuru["USERNAME_PEMINJAM"]; ?></td>
+                        <td><?= $pinGuru["KETERANGAN_PEMINJAMAN"]; ?></td>
+                      </tr>
+                      <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>

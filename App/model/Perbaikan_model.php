@@ -50,4 +50,24 @@ class Perbaikan_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getPerbaikanById($id)
+  {
+    $this->db->query("SELECT * FROM perbaikan WHERE ID_PERBAIKAN = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
+
+  public function updatePerbaikan($request)
+  {
+    $this->db->query("UPDATE perbaikan SET KODE_PERBAIKAN = :kode, ID_GURU = :guru, TANGGAL_PERBAIKAN = :tgl_perbaikan WHERE ID_PERBAIKAN = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('guru', $request['guru']);
+    $this->db->bind('tgl_perbaikan', $request['tgl_perbaikan']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

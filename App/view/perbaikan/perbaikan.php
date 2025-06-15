@@ -42,7 +42,7 @@
                         <tr>
                           <td><?php echo $i; ?></td>
                           <td>
-                            <a href="updatePerbaikan.php?id=<?= $per["ID_PERBAIKAN"]; ?>">Update</a> |
+                            <a href="<?= BASEURL ?>/perbaikan/edit/<?= $per["ID_PERBAIKAN"]; ?>">Update</a> |
                             <a href="hapusPerbaikan.php?id=<?= $per["ID_PERBAIKAN"]; ?>">Delete</a>
                           </td>
                           <td><?= $per["KODE_PERBAIKAN"]; ?></td>

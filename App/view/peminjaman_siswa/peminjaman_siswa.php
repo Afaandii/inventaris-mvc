@@ -14,6 +14,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+      <?php Flasher::flash() ?>
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -39,22 +40,22 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['peminjaman_siswa'] as $pinSis) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="updatePeminjamanSiswa.php?id=<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Update</a> |
-                          <a href="hapusPeminjamanSiswa.php?id=<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Delete</a>
-                        </td>
-                        <td><?= $pinSis["KODE_PEMINJAMAN_SISWA"]; ?></td>
-                        <td><?= $pinSis["USERNAME_PEMINJAM"]; ?></td>
-                        <td><?php echo $pinSis["MATA_PELAJARAN"]; ?></td>
-                        <td><?php echo $pinSis["GURU_PENGAJAR"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a href="updatePeminjamanSiswa.php?id=<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Update</a> |
+                            <a href="hapusPeminjamanSiswa.php?id=<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Delete</a>
+                          </td>
+                          <td><?= $pinSis["KODE_PEMINJAMAN_SISWA"]; ?></td>
+                          <td><?= $pinSis["USERNAME_PEMINJAM"]; ?></td>
+                          <td><?php echo $pinSis["MATA_PELAJARAN"]; ?></td>
+                          <td><?php echo $pinSis["GURU_PENGAJAR"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createPeminjamanSiswa.php">Tambah Peminjaman Siswa</a>
+                  <a href="<?= BASEURL ?>/peminjaman_siswa/create">Tambah Peminjaman Siswa</a>
                 </div>
                 <!-- /.card-body -->
               </div>

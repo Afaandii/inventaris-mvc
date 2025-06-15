@@ -40,18 +40,20 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['peminjaman_siswa'] as $pinSis) { ?>
-                        <tr>
-                          <td><?php echo $i; ?></td>
-                          <td>
-                            <a href="updatePeminjamanSiswa.php?id=<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Update</a> |
-                            <a href="hapusPeminjamanSiswa.php?id=<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Delete</a>
-                          </td>
-                          <td><?= $pinSis["KODE_PEMINJAMAN_SISWA"]; ?></td>
-                          <td><?= $pinSis["USERNAME_PEMINJAM"]; ?></td>
-                          <td><?php echo $pinSis["MATA_PELAJARAN"]; ?></td>
-                          <td><?php echo $pinSis["GURU_PENGAJAR"]; ?></td>
-                        </tr>
-                        <?php $i++; ?>
+                      <tr>
+                        <td><?php echo $i; ?></td>
+                        <td>
+                          <a
+                            href="<?= BASEURL ?>/peminjaman_siswa/edit/<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Update</a>
+                          |
+                          <a href="hapusPeminjamanSiswa.php?id=<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Delete</a>
+                        </td>
+                        <td><?= $pinSis["KODE_PEMINJAMAN_SISWA"]; ?></td>
+                        <td><?= $pinSis["USERNAME_PEMINJAM"]; ?></td>
+                        <td><?php echo $pinSis["MATA_PELAJARAN"]; ?></td>
+                        <td><?php echo $pinSis["GURU_PENGAJAR"]; ?></td>
+                      </tr>
+                      <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>

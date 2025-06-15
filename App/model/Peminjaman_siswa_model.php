@@ -51,4 +51,25 @@ class Peminjaman_siswa_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getPeminjamanSiswaById($id)
+  {
+    $this->db->query("SELECT * FROM peminjaman_siswa INNER JOIN peminjam ON peminjam.ID_PEMINJAM = peminjaman_siswa.ID_PEMINJAM WHERE ID_PEMINJAMAN_SISWA = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
+
+  public function updatePeminjamanSiswa($request)
+  {
+    $this->db->query("UPDATE peminjaman_siswa SET KODE_PEMINJAMAN_SISWA = :kode, ID_PEMINJAM = :peminjam, MATA_PELAJARAN = :mapel, GURU_PENGAJAR = :guru WHERE ID_PEMINJAMAN_SISWA = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('peminjam', $request['peminjam']);
+    $this->db->bind('mapel', $request['mapel']);
+    $this->db->bind('guru', $request['guru']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

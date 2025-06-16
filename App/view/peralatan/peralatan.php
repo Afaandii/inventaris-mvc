@@ -53,12 +53,12 @@
                             onclick="return confirm('Apakah anda yakin ingin menghapus?')">Delete</a>
                         </td>
                         <td><?= $alat["KODE_PERALATAN"]; ?></td>
-                        <td><?php echo $alat["NAMA_PERALATAN"]; ?></td>
-                        <td><?php echo $alat["TANGGALBELI_PERALATAN"]; ?></td>
-                        <td><?php echo $alat["STATUS_PERALATAN"]; ?></td>
-                        <td><?php echo $alat["JUMLAHKERUSAKAN_PERALATAN"]; ?></td>
-                        <td><?php echo $alat["STATUSKETERSEDIAAN_PERALATAN"]; ?></td>
-                        <td><?php echo $alat["ATURANSERVICE_PERALATAN"]; ?></td>
+                        <td><?= $alat["NAMA_PERALATAN"]; ?></td>
+                        <td><?= $alat["TANGGALBELI_PERALATAN"]; ?></td>
+                        <td><?= $alat["STATUS_PERALATAN"]; ?></td>
+                        <td><?= $alat["JUMLAHKERUSAKAN_PERALATAN"]; ?></td>
+                        <td><?= $alat["STATUSKETERSEDIAAN_PERALATAN"]; ?></td>
+                        <td><?= $alat["ATURANSERVICE_PERALATAN"]; ?></td>
                         <td><img src="img/<?= $alat["IMAGE_PERALATAN"]; ?>" alt="gambar alat" width="65" height="55">
                         </td>
                       </tr>

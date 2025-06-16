@@ -64,7 +64,7 @@
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createPeralatan.php">Tambah Peralatan</a>
+                  <a href="<?= BASEURL ?>/peralatan/create">Tambah Peralatan</a>
                 </div>
                 <!-- /.card-body -->
               </div>

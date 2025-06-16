@@ -26,17 +26,32 @@
                   <label for="kode">Kode Peralatan</label>
                   <input type="text" name="kode" id="kode" value="<?= $data['kode']; ?>" readonly>
                   <br>
-                  <label for="jenis">Kode Jenis</label>
-                  <input type="text" name="jenis" id="jenis" readonly>
-                  <input type="hidden" name="jenisId" id="jenisId">
+                  <label for="jenis">Jenis</label>
+                  <select name="jenis" id="jenis">
+                    <?php foreach ($data['jenis'] as $jenis): ?>
+                    <option value="<?= $jenis['ID_JENIS'] ?>">
+                      <?= $jenis['ID_JENIS'] ?> - <?= $jenis['NAMA_JENIS'] ?>
+                    </option>
+                    <?php endforeach; ?>
+                  </select>
                   <br>
-                  <label for="merk">Kode Merk</label>
-                  <input type="text" name="merk" id="merk">
-                  <input type="hidden" name="merkId" id="merkId">
+                  <label for="merk">Merk</label>
+                  <select name="merk" id="merk">
+                    <?php foreach ($data['merk'] as $merk): ?>
+                    <option value="<?= $merk['ID_MERK'] ?>">
+                      <?= $merk['ID_MERK'] ?> - <?= $merk['NAMA_MEREK'] ?>
+                    </option>
+                    <?php endforeach; ?>
+                  </select>
                   <br>
-                  <label for="warna">Kode Warna</label>
-                  <input type="text" name="warna" id="warna" readonly>
-                  <input type="hidden" name="warnaId" id="warnaId">
+                  <label for="warna">Warna</label>
+                  <select name="warna" id="warna">
+                    <?php foreach ($data['warna'] as $warna): ?>
+                    <option value="<?= $warna['ID_WARNA'] ?>">
+                      <?= $warna['ID_WARNA'] ?> - <?= $warna['NAMA_WARNA'] ?>
+                    </option>
+                    <?php endforeach; ?>
+                  </select>
                   <br>
                   <label for="namAl">Nama Peralatan</label>
                   <input type="text" name="nama_alat" class="form-control" id="namAl"

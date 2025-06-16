@@ -46,4 +46,17 @@ class Peralatan extends Controller
     $this->view('peralatan/edit', $data);
     $this->view('template/footer');
   }
+
+  public function update()
+  {
+    if ($this->model("Peralatan_model")->updatePeralatan($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      header("Location: " . BASEURL . "/peralatan");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      header("Location: " . BASEURL . "/peralatan");
+      die;
+    }
+  }
 }

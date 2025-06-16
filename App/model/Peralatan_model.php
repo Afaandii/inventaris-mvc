@@ -134,4 +134,30 @@ class Peralatan_model
 
     return $this->db->single();
   }
+
+  public function updatePeralatan($request)
+  {
+    $gambarLama = $request['gambarLama'];
+    if ($_FILES['gambar']['error'] === 4) {
+      $gambar = $gambarLama;
+    } else {
+      $gambar = $this->upload();
+    }
+    $this->db->query("UPDATE peralatan SET KODE_PERALATAN = :kode, ID_JENIS = :jenis, ID_MERK = :merk, ID_WARNA = :warna, NAMA_PERALATAN = :nama_alat, TANGGALBELI_PERALATAN = :tgl_beli, STATUS_PERALATAN = :sts_alat, JUMLAHKERUSAKAN_PERALATAN = :jumlah_rusak, STATUSKETERSEDIAAN_PERALATAN = :sedia_alat, ATURANSERVICE_PERALATAN = :aturan_service, IMAGE_PERALATAN = :gambar WHERE ID_PERALATAN = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('jenis', $request['jenis']);
+    $this->db->bind('merk', $request['merk']);
+    $this->db->bind('warna', $request['warna']);
+    $this->db->bind('nama_alat', $request['nama_alat']);
+    $this->db->bind('tgl_beli', $request['tgl_beli']);
+    $this->db->bind('sts_alat', $request['sts_alat']);
+    $this->db->bind('jumlah_rusak', $request['jumlah_rusak']);
+    $this->db->bind('sedia_alat', $request['sedia_alat']);
+    $this->db->bind('aturan_service', $request['aturan_service']);
+    $this->db->bind('gambar', $gambar);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

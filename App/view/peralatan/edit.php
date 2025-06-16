@@ -26,7 +26,7 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Peralatan</label>
-                  <input type="text" id="kode" name="kodePer" value="<?= $data['alat']["KODE_PERALATAN"]; ?>">
+                  <input type="text" id="kode" name="kode" value="<?= $data['alat']["KODE_PERALATAN"]; ?>">
                   <br>
                   <label for="jenis">Jenis</label>
                   <select name="jenis" id="jenis">

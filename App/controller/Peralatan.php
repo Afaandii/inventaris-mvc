@@ -59,4 +59,17 @@ class Peralatan extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model("Peralatan_model")->deletePeralatan($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      header("Location: " . BASEURL . "/peralatan");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      header("Location: " . BASEURL . "/peralatan");
+      die;
+    }
+  }
 }

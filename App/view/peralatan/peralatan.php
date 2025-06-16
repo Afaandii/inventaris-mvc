@@ -49,7 +49,8 @@
                         <td>
                           <a href="<?= BASEURL ?>/peralatan/edit/<?= $alat["ID_PERALATAN"]; ?>">Update</a>
                           -----
-                          <a href="hapusPeralatan.php?id=<?= $alat["ID_PERALATAN"]; ?>">Delete</a>
+                          <a href="<?= BASEURL ?>/peralatan/delete/<?= $alat["ID_PERALATAN"]; ?>"
+                            onclick="return confirm('Apakah anda yakin ingin menghapus?')">Delete</a>
                         </td>
                         <td><?= $alat["KODE_PERALATAN"]; ?></td>
                         <td><?php echo $alat["NAMA_PERALATAN"]; ?></td>

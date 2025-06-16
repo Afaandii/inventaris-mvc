@@ -163,12 +163,10 @@ class Peralatan_model
 
   public function deletePeralatan($id)
   {
-    // Hapus dulu data anak di detail_peminjaman
     $this->db->query("DELETE FROM detail_peminjaman WHERE ID_PERALATAN = :id");
     $this->db->bind('id', $id);
     $this->db->execute();
 
-    // Baru hapus data dari peralatan
     $this->db->query("DELETE FROM peralatan WHERE ID_PERALATAN = :id");
     $this->db->bind('id', $id);
     $this->db->execute();

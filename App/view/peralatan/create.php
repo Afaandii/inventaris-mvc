@@ -60,13 +60,13 @@
                   <input type="date" name="tgl_beli" class="form-control" id="tglBeli"
                     placeholder="Masukan Tanggal Beli Peralatan">
                   <label for="status">Status Peralatan</label>
-                  <input type="text" name="status_alat" class="form-control" id="status"
+                  <input type="text" name="sts_alat" class="form-control" id="status"
                     placeholder="Masukan Status Peralatan">
                   <label for="jmlhRusak">Jumlah Kerusakan Peralatan</label>
                   <input type="number" name="jumlah_rusak" class="form-control" id="jmlhRusak"
                     placeholder="Masukan Jumlah Kerusakan Peralatan">
                   <label for="sediaAl">Status Ketersediaan Peralatan</label>
-                  <input type="text" name="status_sedia_alat" class="form-control" id="sediaAl"
+                  <input type="text" name="sedia_alat" class="form-control" id="sediaAl"
                     placeholder="Masukan Status Ketersediaan Peralatan">
                   <label for="aturan">Aturan Service Peralatan</label>
                   <input type="number" name="aturan_service" class="form-control" id="aturan"

@@ -80,7 +80,7 @@
                   <input type="number" name="aturan_service" class="form-control" id="aturanSer"
                     placeholder="Masukan Aturan Service"
                     value="<?php echo $data['alat']["ATURANSERVICE_PERALATAN"]; ?>">
-                  <label for="img">Image Peralatan</label><br>
+                  <label for="img">Gambar Peralatan</label><br>
                   <img src="<?= BASEURL ?>/img/<?= $data['alat']["IMAGE_PERALATAN"]; ?>" width="200" height="150"
                     alt="gambar"><br>
                   <input type="file" name="gambar" class="form-control" id="img">

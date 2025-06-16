@@ -71,7 +71,7 @@
                   <label for="aturan">Aturan Service Peralatan</label>
                   <input type="number" name="aturan_service" class="form-control" id="aturan"
                     placeholder="Masukan Aturan Service Peralatan">
-                  <label for="image">Image Peralatan</label>
+                  <label for="image">Gambar Peralatan</label>
                   <input type="file" name="gambar" class="form-control" id="image"
                     placeholder="Masukan Image Peralatan">
                 </div>

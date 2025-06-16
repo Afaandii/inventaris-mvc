@@ -96,4 +96,35 @@ class Peminjam_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getPeminjamById($id)
+  {
+    $this->db->query("SELECT * FROM peminjam WHERE ID_PEMINJAM = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
+
+  public function updatePeminjam($request)
+  {
+    $gambarLama = $request['gambarLama'];
+
+    if ($_FILES['gambar']['error'] === 4) {
+      $gambar = $gambarLama;
+    } else {
+      $gambar = $this->upload();
+    }
+
+    $this->db->query("UPDATE peminjam SET KODE_PEMINJAM = :kode, USERNAME_PEMINJAM = :username, PASSWORD_PEMINJAM = :password, STATUS_PEMINJAM = :status, KETERANGAN_PERINGATAN = :keterangan, IMAGE_PEMINJAM = :gambar WHERE ID_PEMINJAM = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('username', $request['username']);
+    $this->db->bind('password', $request['password']);
+    $this->db->bind('status', $request['status']);
+    $this->db->bind('keterangan', $request['keterangan']);
+    $this->db->bind('gambar', $gambar);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

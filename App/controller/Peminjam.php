@@ -31,4 +31,26 @@ class Peminjam extends Controller
       die;
     }
   }
+
+  public function edit($id)
+  {
+    $data['peminjam'] = $this->model('Peminjam_model')->getPeminjamById($id);
+    $this->view('template/header');
+    $this->view('template/sidebar');
+    $this->view('peminjam/edit', $data);
+    $this->view('template/footer');
+  }
+
+  public function update()
+  {
+    if ($this->model('Peminjam_model')->updatePeminjam($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      header("Location: " . BASEURL . "/peminjam");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      header("Location: " . BASEURL . "/peminjam");
+      die;
+    }
+  }
 }

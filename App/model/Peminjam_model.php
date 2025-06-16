@@ -127,4 +127,13 @@ class Peminjam_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deletePeminjam($id)
+  {
+    $this->db->query("DELETE FROM peminjam WHERE ID_PEMINJAM = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

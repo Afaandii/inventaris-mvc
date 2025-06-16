@@ -53,4 +53,17 @@ class Peminjam extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model('Peminjam_model')->deletePeminjam($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      header("Location: " . BASEURL . "/peminjam");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      header("Location: " . BASEURL . "/peminjam");
+      die;
+    }
+  }
 }

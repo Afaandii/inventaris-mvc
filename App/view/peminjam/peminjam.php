@@ -42,21 +42,22 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['peminjam'] as $pinjam) { ?>
-                        <tr>
-                          <td><?php echo $i; ?></td>
-                          <td>
-                            <a href="<?= BASEURL ?>/peminjam/edit/<?php echo $pinjam["ID_PEMINJAM"]; ?>">Update</a> |
-                            <a href="hapusPeminjam.php?id=<?php echo $pinjam["ID_PEMINJAM"]; ?>">Delete</a>
-                          </td>
-                          <td><?= $pinjam["KODE_PEMINJAM"]; ?></td>
-                          <td><?php echo $pinjam["USERNAME_PEMINJAM"]; ?></td>
-                          <td><?php echo $pinjam["PASSWORD_PEMINJAM"]; ?></td>
-                          <td><?php echo $pinjam["STATUS_PEMINJAM"]; ?></td>
-                          <td><?php echo $pinjam["KETERANGAN_PERINGATAN"]; ?></td>
-                          <td><img src="img/<?= $pinjam["IMAGE_PEMINJAM"]; ?>" width="50" height="50"
-                              alt="gambar peminjam"></td>
-                        </tr>
-                        <?php $i++; ?>
+                      <tr>
+                        <td><?php echo $i; ?></td>
+                        <td>
+                          <a href="<?= BASEURL ?>/peminjam/edit/<?php echo $pinjam["ID_PEMINJAM"]; ?>">Update</a> |
+                          <a href="<?= BASEURL ?>/peminjam/delete/<?php echo $pinjam["ID_PEMINJAM"]; ?>"
+                            onclick="return confirm('Apakah anda yakin ingin menghapus data?')">Delete</a>
+                        </td>
+                        <td><?= $pinjam["KODE_PEMINJAM"]; ?></td>
+                        <td><?php echo $pinjam["USERNAME_PEMINJAM"]; ?></td>
+                        <td><?php echo $pinjam["PASSWORD_PEMINJAM"]; ?></td>
+                        <td><?php echo $pinjam["STATUS_PEMINJAM"]; ?></td>
+                        <td><?php echo $pinjam["KETERANGAN_PERINGATAN"]; ?></td>
+                        <td><img src="img/<?= $pinjam["IMAGE_PEMINJAM"]; ?>" width="50" height="50"
+                            alt="gambar peminjam"></td>
+                      </tr>
+                      <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>

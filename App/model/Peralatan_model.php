@@ -121,4 +121,17 @@ class Peralatan_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getPeralatanById($id)
+  {
+    $this->db->query("SELECT *, jenis.KODE_JENIS, merk.KODE_MERK, 
+    warna.KODE_WARNA FROM peralatan
+    INNER JOIN jenis ON jenis.ID_JENIS = peralatan.ID_JENIS
+    INNER JOIN merk ON merk.ID_MERK = peralatan.ID_MERK
+    INNER JOIN warna ON warna.ID_WARNA = peralatan.ID_WARNA
+    WHERE ID_PERALATAN = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
 }

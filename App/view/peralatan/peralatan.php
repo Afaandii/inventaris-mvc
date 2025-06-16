@@ -14,6 +14,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+      <?php Flasher::flash() ?>
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -46,7 +47,7 @@
                       <tr>
                         <td><?php echo $i; ?></td>
                         <td>
-                          <a href="updatePeralatan.php?id=<?= $alat["ID_PERALATAN"]; ?>">Update</a>
+                          <a href="<?= BASEURL ?>/peralatan/edit/<?= $alat["ID_PERALATAN"]; ?>">Update</a>
                           -----
                           <a href="hapusPeralatan.php?id=<?= $alat["ID_PERALATAN"]; ?>">Delete</a>
                         </td>

@@ -34,4 +34,16 @@ class Peralatan extends Controller
       die;
     }
   }
+
+  public function edit($id)
+  {
+    $data['alat'] = $this->model("Peralatan_model")->getPeralatanById($id);
+    $data['jenis'] = $this->model("Peralatan_model")->getDataJenis();
+    $data['merk'] = $this->model("Peralatan_model")->getDataMerk();
+    $data['warna'] = $this->model("Peralatan_model")->getDataWarna();
+    $this->view('template/header');
+    $this->view('template/sidebar');
+    $this->view('peralatan/edit', $data);
+    $this->view('template/footer');
+  }
 }

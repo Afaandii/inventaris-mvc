@@ -14,6 +14,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+      <?php Flasher::flash() ?>
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -42,25 +43,25 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['peminjaman'] as $pinjaman) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="updatePeminjaman.php?id=<?= $pinjaman["ID_PEMINJAMAN"]; ?>">Update</a> |
-                          <a href="hapusPeminjaman.php?id=<?= $pinjaman["ID_PEMINJAMAN"]; ?>">Delete</a>
-                        </td>
-                        <td><?= $pinjaman["KODE_PEMINJAMAN"]; ?></td>
-                        <td><?= $pinjaman['USERNAME_PEMINJAM']; ?></td>
-                        <td><?= $pinjaman['NAMA_GURU']; ?></td>
-                        <td><?= $pinjaman['DENDA']; ?></td>
-                        <td><?php echo $pinjaman["TANGGAL_PEMINJAMAN"]; ?></td>
-                        <td><?php echo $pinjaman["TANGGAL_KEMBALI"]; ?></td>
-                        <td><?php echo $pinjaman["TANGGAL_PENGEMBALIAN"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a href="updatePeminjaman.php?id=<?= $pinjaman["ID_PEMINJAMAN"]; ?>">Update</a> |
+                            <a href="hapusPeminjaman.php?id=<?= $pinjaman["ID_PEMINJAMAN"]; ?>">Delete</a>
+                          </td>
+                          <td><?= $pinjaman["KODE_PEMINJAMAN"]; ?></td>
+                          <td><?= $pinjaman['USERNAME_PEMINJAM']; ?></td>
+                          <td><?= $pinjaman['NAMA_GURU']; ?></td>
+                          <td><?= $pinjaman['DENDA']; ?></td>
+                          <td><?php echo $pinjaman["TANGGAL_PEMINJAMAN"]; ?></td>
+                          <td><?php echo $pinjaman["TANGGAL_KEMBALI"]; ?></td>
+                          <td><?php echo $pinjaman["TANGGAL_PENGEMBALIAN"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createPeminjaman.php">Tambah Peminjaman</a>
+                  <a href="<?= BASEURL ?>/peminjaman/create">Tambah Peminjaman</a>
                 </div>
                 <!-- /.card-body -->
               </div>

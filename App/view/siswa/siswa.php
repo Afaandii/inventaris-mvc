@@ -46,7 +46,8 @@
                           <td><?php echo $i; ?></td>
                           <td>
                             <a href="<?= BASEURL ?>/siswa/edit/<?= $sis["ID_SISWA"]; ?>">Update</a> |
-                            <a href="hapusSiswa.php?id=<?= $sis["ID_SISWA"]; ?>">Delete</a>
+                            <a href="<?= BASEURL ?>/siswa/delete/<?= $sis["ID_SISWA"]; ?>"
+                              onclick="return confirm('Apakah yakin ingin menghapus data?')">Delete</a>
                           </td>
                           <td><?= $sis["KODE_SISWA"]; ?></td>
                           <td><?php echo $sis["NIS"]; ?></td>

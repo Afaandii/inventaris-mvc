@@ -89,4 +89,13 @@ class Siswa_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deleteSiswa($id)
+  {
+    $this->db->query("DELETE FROM siswa WHERE ID_SISWA = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

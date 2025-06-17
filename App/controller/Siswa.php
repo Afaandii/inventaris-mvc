@@ -57,4 +57,17 @@ class Siswa extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model("Siswa_model")->deleteSiswa($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      header("Location: " . BASEURL . "/siswa");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      header("Location: " . BASEURL . "/siswa");
+      die;
+    }
+  }
 }

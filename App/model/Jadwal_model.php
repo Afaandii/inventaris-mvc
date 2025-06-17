@@ -87,4 +87,21 @@ class Jadwal_model
 
     return $this->db->single();
   }
+
+  public function updateJadwal($request)
+  {
+    $this->db->query("UPDATE jadwal SET KODE_JADWAL = :kode, ID_KELASSISWA = :kelsis, ID_PELAJARAN = :mapel, ID_GURU = :guru, ID_HARI = :hari, JAM_MASUK = :jamsuk, JAM_KELUAR = :jamkel, SEMESTER = :semester WHERE ID_JADWAL = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('kelsis', $request['kelsis']);
+    $this->db->bind('mapel', $request['mapel']);
+    $this->db->bind('guru', $request['guru']);
+    $this->db->bind('hari', $request['hari']);
+    $this->db->bind('jamsuk', $request['jamsuk']);
+    $this->db->bind('jamkel', $request['jamkel']);
+    $this->db->bind('semester', $request['semester']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

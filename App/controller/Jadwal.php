@@ -48,4 +48,17 @@ class Jadwal extends Controller
     $this->view('jadwal/edit', $data);
     $this->view('template/footer');
   }
+
+  public function update()
+  {
+    if ($this->model('Jadwal_model')->updateJadwal($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      header("Location: " . BASEURL . "/jadwal");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      header("Location: " . BASEURL . "/jadwal");
+      die;
+    }
+  }
 }

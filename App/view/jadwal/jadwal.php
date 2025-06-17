@@ -47,7 +47,7 @@
                         <tr>
                           <td><?php echo $i; ?></td>
                           <td>
-                            <a href="updateJadwal.php?id=<?php echo $jad["ID_JADWAL"]; ?>">Update</a> |
+                            <a href="<?= BASEURL ?>/jadwal/edit/<?php echo $jad["ID_JADWAL"]; ?>">Update</a> |
                             <a href="hapusJadwal.php?id=<?php echo $jad["ID_JADWAL"]; ?>">Delete</a>
                           </td>
                           <td><?= $jad["KODE_JADWAL"]; ?></td>

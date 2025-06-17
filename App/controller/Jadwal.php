@@ -35,4 +35,17 @@ class Jadwal extends Controller
       die;
     }
   }
+
+  public function edit($id)
+  {
+    $data['jadwal'] = $this->model("Jadwal_model")->getJadwalById($id);
+    $data['kelsis'] = $this->model("Jadwal_model")->getDataKelsis($id);
+    $data['mapel'] = $this->model("Jadwal_model")->getDataPelajaran($id);
+    $data['guru'] = $this->model("Jadwal_model")->getDataGuru($id);
+    $data['hari'] = $this->model("Jadwal_model")->getDataHari($id);
+    $this->view('template/header');
+    $this->view('template/sidebar');
+    $this->view('jadwal/edit', $data);
+    $this->view('template/footer');
+  }
 }

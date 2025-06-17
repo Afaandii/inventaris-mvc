@@ -75,4 +75,16 @@ class Jadwal_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getJadwalById($id)
+  {
+    $this->db->query("SELECT *, kelas_siswa.KODE_KELASSISWA, pelajaran.KODE_PELAJARAN, guru.KODE_GURU, hari.KODE_HARI FROM jadwal 
+    INNER JOIN kelas_siswa ON kelas_siswa.ID_KELASSISWA =  jadwal.ID_KELASSISWA INNER JOIN pelajaran ON pelajaran.ID_PELAJARAN = jadwal.ID_PELAJARAN 
+    INNER JOIN guru ON guru.ID_GURU = jadwal.ID_GURU 
+    INNER JOIN hari ON hari.ID_HARI = jadwal.ID_HARI 
+    WHERE ID_JADWAL = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
 }

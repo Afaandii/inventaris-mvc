@@ -48,7 +48,8 @@
                           <td><?php echo $i; ?></td>
                           <td>
                             <a href="<?= BASEURL ?>/jadwal/edit/<?php echo $jad["ID_JADWAL"]; ?>">Update</a> |
-                            <a href="hapusJadwal.php?id=<?php echo $jad["ID_JADWAL"]; ?>">Delete</a>
+                            <a href="<?= BASEURL ?>/jadwal/delete/<?php echo $jad["ID_JADWAL"]; ?>"
+                              onclick="return confirm('Apakah anda yakin menghapus jadwal?')">Delete</a>
                           </td>
                           <td><?= $jad["KODE_JADWAL"]; ?></td>
                           <td><?= $jad["NAMA_KELASSISWA"]; ?></td>

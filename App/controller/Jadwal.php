@@ -61,4 +61,17 @@ class Jadwal extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model("Jadwal_model")->deleteJadwal($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      header("Location: " . BASEURL . "/jadwal");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      header("Location: " . BASEURL . "/jadwal");
+      die;
+    }
+  }
 }

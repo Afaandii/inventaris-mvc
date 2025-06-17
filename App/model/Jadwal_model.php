@@ -59,4 +59,20 @@ class Jadwal_model
     $this->db->query("SELECT ID_HARI, NAMA_HARI FROm hari");
     return $this->db->resultSet();
   }
+
+  public function insertJadwal($request)
+  {
+    $this->db->query("INSERT INTO jadwal VALUES('', :kode, :kelsis, :mapel, :guru, :hari, :jamsuk, :jamkel, :semester)");
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('kelsis', $request['kelsis']);
+    $this->db->bind('mapel', $request['mapel']);
+    $this->db->bind('guru', $request['guru']);
+    $this->db->bind('hari', $request['hari']);
+    $this->db->bind('jamsuk', $request['jamsuk']);
+    $this->db->bind('jamkel', $request['jamkel']);
+    $this->db->bind('semester', $request['semester']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

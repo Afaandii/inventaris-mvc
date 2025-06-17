@@ -22,4 +22,17 @@ class Jadwal extends Controller
     $this->view('jadwal/create', $data);
     $this->view('template/footer');
   }
+
+  public function store()
+  {
+    if ($this->model("Jadwal_model")->insertJadwal($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      header("Location: " . BASEURL . "/jadwal");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      header("Location: " . BASEURL . "/jadwal");
+      die;
+    }
+  }
 }

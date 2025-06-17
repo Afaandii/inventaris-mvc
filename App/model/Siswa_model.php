@@ -16,4 +16,49 @@ class Siswa_model
       INNER JOIN kelas_siswa ON kelas_siswa.ID_KELASSISWA = siswa.ID_KELASSISWA");
     return $this->db->resultSet();
   }
+
+  public function generateKode()
+  {
+    $this->db->query("SELECT max(KODE_SISWA) as kodeTerbesar FROM siswa");
+    $data = $this->db->single();
+
+    $kodeDenda = $data ? $data["kodeTerbesar"] : null;
+
+    $urutan = (int) substr($kodeDenda, 3, 3) ?: 5;
+
+    $urutan++;
+
+    $huruf = "SIS";
+
+    $kodeDenda = $huruf . sprintf("%03s", $urutan);
+    return $kodeDenda;
+  }
+
+  public function getDataPeminjam()
+  {
+    $this->db->query("SELECT ID_PEMINJAM, USERNAME_PEMINJAM FROM peminjam");
+    return $this->db->resultSet();
+  }
+
+  public function getDataKelsis()
+  {
+    $this->db->query("SELECT ID_KELASSISWA, NAMA_KELASSISWA FROM kelas_siswa");
+    return $this->db->resultSet();
+  }
+
+  public function insertSiswa($request)
+  {
+    $this->db->query("INSERT INTO siswa VALUES('', :kode, :peminjam, :kelsis, :nis, :nama, :alamat, :angkatan, :keterangan)");
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('peminjam', $request['peminjam']);
+    $this->db->bind('kelsis', $request['kelsis']);
+    $this->db->bind('nis', $request['nis']);
+    $this->db->bind('nama', $request['nama']);
+    $this->db->bind('alamat', $request['alamat']);
+    $this->db->bind('angkatan', $request['angkatan']);
+    $this->db->bind('keterangan', $request['keterangan']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

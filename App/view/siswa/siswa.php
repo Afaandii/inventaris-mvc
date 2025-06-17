@@ -14,6 +14,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+      <?php Flasher::flash() ?>
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -41,24 +42,24 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['siswa'] as $sis) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="updateSiswa.php?id=<?= $sis["ID_SISWA"]; ?>">Update</a> |
-                          <a href="hapusSiswa.php?id=<?= $sis["ID_SISWA"]; ?>">Delete</a>
-                        </td>
-                        <td><?= $sis["KODE_SISWA"]; ?></td>
-                        <td><?php echo $sis["NIS"]; ?></td>
-                        <td><?php echo $sis["NAMA_SISWA"]; ?></td>
-                        <td><?php echo $sis["ALAMAT_SISWA"]; ?></td>
-                        <td><?php echo $sis["ANGKATAN_SISWA"]; ?></td>
-                        <td><?php echo $sis["KETERANGAN_SISWA"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a href="updateSiswa.php?id=<?= $sis["ID_SISWA"]; ?>">Update</a> |
+                            <a href="hapusSiswa.php?id=<?= $sis["ID_SISWA"]; ?>">Delete</a>
+                          </td>
+                          <td><?= $sis["KODE_SISWA"]; ?></td>
+                          <td><?php echo $sis["NIS"]; ?></td>
+                          <td><?php echo $sis["NAMA_SISWA"]; ?></td>
+                          <td><?php echo $sis["ALAMAT_SISWA"]; ?></td>
+                          <td><?php echo $sis["ANGKATAN_SISWA"]; ?></td>
+                          <td><?php echo $sis["KETERANGAN_SISWA"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createSiswa.php">Tambah Siswa</a>
+                  <a href="<?= BASEURL ?>/siswa/create">Tambah Siswa</a>
                 </div>
                 <!-- /.card-body -->
               </div>

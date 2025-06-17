@@ -45,7 +45,7 @@
                         <tr>
                           <td><?php echo $i; ?></td>
                           <td>
-                            <a href="updateSiswa.php?id=<?= $sis["ID_SISWA"]; ?>">Update</a> |
+                            <a href="<?= BASEURL ?>/siswa/edit/<?= $sis["ID_SISWA"]; ?>">Update</a> |
                             <a href="hapusSiswa.php?id=<?= $sis["ID_SISWA"]; ?>">Delete</a>
                           </td>
                           <td><?= $sis["KODE_SISWA"]; ?></td>

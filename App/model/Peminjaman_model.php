@@ -68,4 +68,32 @@ class Peminjaman_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getPeminjamanById($id)
+  {
+    $this->db->query("SELECT *, peminjam.KODE_PEMINJAM, guru.KODE_GURU, denda.KODE_DENDA, denda.DENDA FROM peminjaman 
+    INNER JOIN peminjam ON peminjam.ID_PEMINJAM = peminjaman.ID_PEMINJAM 
+    INNER JOIN guru ON guru.ID_GURU = peminjaman.ID_GURU 
+    LEFT JOIN denda ON denda.ID_DENDA = peminjaman.ID_DENDA 
+    WHERE ID_PEMINJAMAN = :id");
+    $this->db->bind('id', $id);
+
+    return $this->db->single();
+  }
+
+  public function updatePeminjaman($request)
+  {
+    $this->db->query("UPDATE peminjaman SET KODE_PEMINJAMAN = :kode, ID_PEMINJAM = :peminjam,ID_GURU = :guru, ID_DENDA = :denda, TANGGAL_PEMINJAMAN = :tgl_pemin, TANGGAL_KEMBALI = :tgl_kem, TANGGAL_PENGEMBALIAN = :tgl_pengem WHERE ID_PEMINJAMAN = :id");
+    $this->db->bind('id', $request['id']);
+    $this->db->bind('kode', $request['kode']);
+    $this->db->bind('peminjam', $request['peminjam']);
+    $this->db->bind('guru', $request['guru']);
+    $this->db->bind('denda', $request['denda']);
+    $this->db->bind('tgl_pemin', $request['tgl_pemin']);
+    $this->db->bind('tgl_kem', $request['tgl_kem']);
+    $this->db->bind('tgl_pengem', $request['tgl_pengem']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

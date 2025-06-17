@@ -34,4 +34,29 @@ class Peminjaman extends Controller
       die;
     }
   }
+
+  public function edit($id)
+  {
+    $data['peminjaman'] = $this->model('Peminjaman_model')->getPeminjamanById($id);
+    $data['peminjam'] = $this->model('Peminjaman_model')->getDataPeminjam();
+    $data['guru'] = $this->model('Peminjaman_model')->getDataGuru();
+    $data['denda'] = $this->model('Peminjaman_model')->getDataDenda();
+    $this->view('template/header');
+    $this->view('template/sidebar');
+    $this->view('peminjaman/edit', $data);
+    $this->view('template/footer');
+  }
+
+  public function update()
+  {
+    if ($this->model('Peminjaman_model')->updatePeminjaman($_POST) > 0) {
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      header("Location: " . BASEURL . "/peminjaman");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      header("Location: " . BASEURL . "/peminjaman");
+      die;
+    }
+  }
 }

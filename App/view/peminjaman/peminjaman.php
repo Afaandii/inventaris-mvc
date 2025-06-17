@@ -46,7 +46,7 @@
                         <tr>
                           <td><?php echo $i; ?></td>
                           <td>
-                            <a href="updatePeminjaman.php?id=<?= $pinjaman["ID_PEMINJAMAN"]; ?>">Update</a> |
+                            <a href="<?= BASEURL ?>/peminjaman/edit/<?= $pinjaman["ID_PEMINJAMAN"]; ?>">Update</a> |
                             <a href="hapusPeminjaman.php?id=<?= $pinjaman["ID_PEMINJAMAN"]; ?>">Delete</a>
                           </td>
                           <td><?= $pinjaman["KODE_PEMINJAMAN"]; ?></td>

@@ -9,4 +9,17 @@ class Jadwal extends Controller
     $this->view('template/sidebar');
     $this->view('template/footer');
   }
+
+  public function create()
+  {
+    $data['kelsis'] = $this->model("Jadwal_model")->getDataKelsis();
+    $data['mapel'] = $this->model("Jadwal_model")->getDataPelajaran();
+    $data['guru'] = $this->model("Jadwal_model")->getDataGuru();
+    $data['hari'] = $this->model("Jadwal_model")->getDataHari();
+    $data['kode'] = $this->model("Jadwal_model")->generateKode();
+    $this->view('template/header');
+    $this->view('template/sidebar');
+    $this->view('jadwal/create', $data);
+    $this->view('template/footer');
+  }
 }

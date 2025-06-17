@@ -14,7 +14,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
-
+      <?php Flasher::flash() ?>
       <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -44,26 +44,26 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['jadwal'] as $jad) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="updateJadwal.php?id=<?php echo $jad["ID_JADWAL"]; ?>">Update</a> |
-                          <a href="hapusJadwal.php?id=<?php echo $jad["ID_JADWAL"]; ?>">Delete</a>
-                        </td>
-                        <td><?= $jad["KODE_JADWAL"]; ?></td>
-                        <td><?= $jad["NAMA_KELASSISWA"]; ?></td>
-                        <td><?= $jad["NAMA_PELAJARAN"]; ?></td>
-                        <td><?= $jad["NAMA_GURU"]; ?></td>
-                        <td><?= $jad["NAMA_HARI"]; ?></td>
-                        <td><?php echo $jad["JAM_MASUK"]; ?></td>
-                        <td><?php echo $jad["JAM_KELUAR"]; ?></td>
-                        <td><?php echo $jad["SEMESTER"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a href="updateJadwal.php?id=<?php echo $jad["ID_JADWAL"]; ?>">Update</a> |
+                            <a href="hapusJadwal.php?id=<?php echo $jad["ID_JADWAL"]; ?>">Delete</a>
+                          </td>
+                          <td><?= $jad["KODE_JADWAL"]; ?></td>
+                          <td><?= $jad["NAMA_KELASSISWA"]; ?></td>
+                          <td><?= $jad["NAMA_PELAJARAN"]; ?></td>
+                          <td><?= $jad["NAMA_GURU"]; ?></td>
+                          <td><?= $jad["NAMA_HARI"]; ?></td>
+                          <td><?php echo $jad["JAM_MASUK"]; ?></td>
+                          <td><?php echo $jad["JAM_KELUAR"]; ?></td>
+                          <td><?php echo $jad["SEMESTER"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="createJadwal.php">Tambah Jadwal</a>
+                  <a href="<?= BASEURL ?>/jadwal/create">Tambah Jadwal</a>
                 </div>
                 <!-- /.card-body -->
               </div>

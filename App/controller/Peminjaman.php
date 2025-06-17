@@ -59,4 +59,17 @@ class Peminjaman extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model('Peminjaman_model')->deletePeminjaman($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      header("Location: " . BASEURL . "/peminjaman");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      header("Location: " . BASEURL . "/peminjaman");
+      die;
+    }
+  }
 }

@@ -47,7 +47,8 @@
                           <td><?php echo $i; ?></td>
                           <td>
                             <a href="<?= BASEURL ?>/peminjaman/edit/<?= $pinjaman["ID_PEMINJAMAN"]; ?>">Update</a> |
-                            <a href="hapusPeminjaman.php?id=<?= $pinjaman["ID_PEMINJAMAN"]; ?>">Delete</a>
+                            <a href="<?= BASEURL ?>/peminjaman/delete/<?= $pinjaman["ID_PEMINJAMAN"]; ?>"
+                              onclick="return confirm('Apakah anda yakin ingin menghapus data?')">Delete</a>
                           </td>
                           <td><?= $pinjaman["KODE_PEMINJAMAN"]; ?></td>
                           <td><?= $pinjaman['USERNAME_PEMINJAM']; ?></td>

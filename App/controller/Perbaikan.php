@@ -23,11 +23,11 @@ class Perbaikan extends Controller
   public function store()
   {
     if ($this->model('Perbaikan_model')->insertPerbaikan($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success', 'Perbaikan');
       header("Location: " . BASEURL . "/perbaikan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger', 'Perbaikan');
       header("Location: " . BASEURL . "/perbaikan");
       die;
     }
@@ -46,11 +46,11 @@ class Perbaikan extends Controller
   public function update()
   {
     if ($this->model("Perbaikan_model")->updatePerbaikan($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success', 'Perbaikan');
       header("Location: " . BASEURL . "/perbaikan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger', 'Perbaikan');
       header("Location: " . BASEURL . "/perbaikan");
       die;
     }
@@ -59,11 +59,11 @@ class Perbaikan extends Controller
   public function delete($id)
   {
     if ($this->model("Perbaikan_model")->deletePerbaikan($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success', 'Perbaikan');
       header("Location: " . BASEURL . "/perbaikan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger', 'Perbaikan');
       header("Location: " . BASEURL . "/perbaikan");
       die;
     }

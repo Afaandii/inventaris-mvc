@@ -22,11 +22,11 @@ class Warna extends Controller
   public function store()
   {
     if ($this->model('Warna_model')->insertWarna($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success', 'Warna');
       header("Location: " . BASEURL . "/warna");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger', 'Warna');
       header("Location: " . BASEURL . "/warna");
       die;
     }
@@ -44,11 +44,11 @@ class Warna extends Controller
   public function update()
   {
     if ($this->model('Warna_model')->updateWarna($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success', 'Warna');
       header("Location: " . BASEURL . "/warna");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger', 'Warna');
       header("Location: " . BASEURL . "/warna");
       die;
     }
@@ -57,11 +57,11 @@ class Warna extends Controller
   public function delete($id)
   {
     if ($this->model('Warna_model')->deleteWarna($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success', 'Warna');
       header("Location: " . BASEURL . "/warna");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger', 'Warna');
       header("Location: " . BASEURL . "/warna");
       die;
     }

@@ -22,11 +22,11 @@ class Jenis extends Controller
   public function store()
   {
     if ($this->model('Jenis_model')->insertJenis($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success', 'Jenis');
       header("Location: " . BASEURL . "/jenis");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger', 'Jenis');
       header("Location: " . BASEURL . "/jenis");
       die;
     }
@@ -44,11 +44,11 @@ class Jenis extends Controller
   public function update()
   {
     if ($this->model('Jenis_model')->updateJenis($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success', 'Jenis');
       header("Location: " . BASEURL . "/jenis");
       exit;
     } else {
-      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger', 'Jenis');
       header("Location: " . BASEURL . "/jenis");
       exit;
     }
@@ -57,11 +57,11 @@ class Jenis extends Controller
   public function delete($id)
   {
     if ($this->model('Jenis_model')->deleteJenis($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success', 'Jenis');
       header("Location: " . BASEURL . "/jenis");
       exit;
     } else {
-      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger', 'Jenis');
       header("Location: " . BASEURL . "/jenis");
       exit;
     }

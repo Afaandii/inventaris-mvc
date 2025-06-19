@@ -22,11 +22,11 @@ class Jurusan extends Controller
   public function store()
   {
     if ($this->model('Jurusan_model')->insertJurusan($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success', 'Jurusan');
       header("Location: " . BASEURL . "/jurusan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger', 'Jurusan');
       header("Location: " . BASEURL . "/jurusan");
       die;
     }
@@ -44,11 +44,11 @@ class Jurusan extends Controller
   public function update()
   {
     if ($this->model('Jurusan_model')->updateJurusan($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success', 'Jurusan');
       header("Location: " . BASEURL . "/jurusan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger', 'Jurusan');
       header("Location: " . BASEURL . "/jurusan");
       die;
     }
@@ -57,11 +57,11 @@ class Jurusan extends Controller
   public function delete($id)
   {
     if ($this->model('Jurusan_model')->deleteJurusan($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Didelete', 'success');
+      Flasher::setFlash('Berhasil', 'Didelete', 'success', 'Jurusan');
       header("Location: " . BASEURL . "/jurusan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Didelete', 'danger');
+      Flasher::setFlash('Gagal!', 'Didelete', 'danger', 'Jurusan');
       header("Location: " . BASEURL . "/jurusan");
       die;
     }

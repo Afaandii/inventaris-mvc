@@ -26,11 +26,11 @@ class Jadwal extends Controller
   public function store()
   {
     if ($this->model("Jadwal_model")->insertJadwal($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success', 'Jadwal');
       header("Location: " . BASEURL . "/jadwal");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger', 'Jadwal');
       header("Location: " . BASEURL . "/jadwal");
       die;
     }
@@ -52,11 +52,11 @@ class Jadwal extends Controller
   public function update()
   {
     if ($this->model('Jadwal_model')->updateJadwal($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success', 'Jadwal');
       header("Location: " . BASEURL . "/jadwal");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger', 'Jadwal');
       header("Location: " . BASEURL . "/jadwal");
       die;
     }
@@ -65,11 +65,11 @@ class Jadwal extends Controller
   public function delete($id)
   {
     if ($this->model("Jadwal_model")->deleteJadwal($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success', 'Jadwal');
       header("Location: " . BASEURL . "/jadwal");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger', 'Jadwal');
       header("Location: " . BASEURL . "/jadwal");
       die;
     }

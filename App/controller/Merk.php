@@ -22,11 +22,11 @@ class Merk extends Controller
   public function store()
   {
     if ($this->model('Merk_model')->insertMerk($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success', 'Merk');
       header("Location: " . BASEURL . "/merk");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger', 'Merk');
       header("Location: " . BASEURL . "/merk");
       die;
     }
@@ -44,11 +44,11 @@ class Merk extends Controller
   public function update()
   {
     if ($this->model('Merk_model')->updateMerk($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success', 'Merk');
       header("Location: " . BASEURL . "/merk");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger', 'Merk');
       header("Location: " . BASEURL . "/merk");
       die;
     }
@@ -57,11 +57,11 @@ class Merk extends Controller
   public function delete($id)
   {
     if ($this->model('Merk_model')->deleteMerk($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success', 'Merk');
       header("Location: " . BASEURL . "/merk");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger', 'Merk');
       header("Location: " . BASEURL . "/merk");
       die;
     }

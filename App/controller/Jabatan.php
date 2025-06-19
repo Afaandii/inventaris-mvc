@@ -22,11 +22,11 @@ class Jabatan extends Controller
   public function store()
   {
     if ($this->model('Jabatan_model')->insertJabatan($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Di tambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Di tambahkan', 'success', 'Jabatan');
       header("Location: " . BASEURL . "/jabatan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Di tambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Di tambahkan', 'danger', 'Jabatan');
       header("Location: " . BASEURL . "/jabatan");
       die;
     }
@@ -44,11 +44,11 @@ class Jabatan extends Controller
   public function update()
   {
     if ($this->model('Jabatan_model')->updateJabatan($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Di update', 'success');
+      Flasher::setFlash('Berhasil', 'Di update', 'success', 'Jabatan');
       header("Location: " . BASEURL . "/jabatan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Di update', 'danger');
+      Flasher::setFlash('Gagal!', 'Di update', 'danger', 'Jabatan');
       header("Location: " . BASEURL . "/jabatan");
       die;
     }
@@ -57,11 +57,11 @@ class Jabatan extends Controller
   public function delete($id)
   {
     if ($this->model('Jabatan_model')->deleteJabatan($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Di hapus', 'success');
+      Flasher::setFlash('Berhasil', 'Di hapus', 'success', 'Jabatan');
       header("Location: " . BASEURL . "/jabatan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Di hapus', 'danger');
+      Flasher::setFlash('Gagal!', 'Di hapus', 'danger', 'Jabatan');
       header("Location: " . BASEURL . "/jabatan");
       die;
     }

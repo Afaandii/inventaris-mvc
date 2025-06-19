@@ -22,11 +22,11 @@ class Denda extends Controller
   public function store()
   {
     if ($this->model('Denda_model')->insertDenda($_POST) > 0) {
-      Flasher::setFlash('Denda', 'Behasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Behasil', 'Ditambahkan', 'success', 'Denda');
       header("Location: " . BASEURL . "/denda");
       exit;
     } else {
-      Flasher::setFlash('Denda', 'Gagal!', 'ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'ditambahkan', 'danger', 'Denda');
       header("Location: " . BASEURL . "/denda");
       exit;
     }

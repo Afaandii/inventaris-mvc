@@ -22,11 +22,11 @@ class Kelas extends Controller
   public function store()
   {
     if ($this->model('Kelas_model')->insertKelas($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success', 'Kelas');
       header("Location: " . BASEURL . "/kelas");
       exit;
     } else {
-      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger', 'Kelas');
       header("Location: " . BASEURL . "/kelas");
       exit;
     }
@@ -44,11 +44,11 @@ class Kelas extends Controller
   public function update()
   {
     if ($this->model('Kelas_model')->updateKelas($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success', 'Kelas');
       header("Location: " . BASEURL . "/kelas");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger', 'Kelas');
       header("Location: " . BASEURL . "/kelas");
       die;
     }
@@ -57,11 +57,11 @@ class Kelas extends Controller
   public function delete($id)
   {
     if ($this->model('Kelas_model')->deleteKelas($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success', 'Kelas');
       header("Location: " . BASEURL . "/kelas");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger', 'Kelas');
       header("Location: " . BASEURL . "/kelas");
       die;
     }

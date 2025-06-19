@@ -23,11 +23,11 @@ class Peminjaman_siswa extends Controller
   public function store()
   {
     if ($this->model("Peminjaman_siswa_model")->insertPeminjamanSiswa($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success', 'Peminjaman Siswa');
       header("Location: " . BASEURL . "/peminjaman_siswa");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger', 'Peminjaman Siswa');
       header("Location: " . BASEURL . "/peminjaman_siswa");
       die;
     }
@@ -46,11 +46,11 @@ class Peminjaman_siswa extends Controller
   public function update()
   {
     if ($this->model("Peminjaman_siswa_model")->updatePeminjamanSiswa($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success', 'Peminjaman Siswa');
       header("Location: " . BASEURL . "/peminjaman_siswa");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger', 'Peminjaman Siswa');
       header("Location: " . BASEURL . "/peminjaman_siswa");
       die;
     }

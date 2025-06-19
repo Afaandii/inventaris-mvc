@@ -23,11 +23,11 @@ class Peminjaman_guru extends Controller
   public function store()
   {
     if ($this->model("Peminjaman_guru_model")->insertPeminjamanGuru($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success', 'Peminjaman Guru');
       header("Location: " . BASEURL . "/peminjaman_guru");
       exit;
     } else {
-      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger', 'Peminjaman Guru');
       header("Location: " . BASEURL . "/peminjaman_guru");
       exit;
     }
@@ -46,11 +46,11 @@ class Peminjaman_guru extends Controller
   public function update()
   {
     if ($this->model("Peminjaman_guru_model")->updatePeminjamanGuru($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success', 'Peminjaman Guru');
       header("Location: " . BASEURL . "/peminjaman_guru");
       exit;
     } else {
-      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger', 'Peminjaman Guru');
       header("Location: " . BASEURL . "/peminjaman_guru");
       exit;
     }
@@ -59,11 +59,11 @@ class Peminjaman_guru extends Controller
   public function delete($id)
   {
     if ($this->model("Peminjaman_guru_model")->deletePeminjamanGuru($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success', 'Peminjaman Guru');
       header("Location: " . BASEURL . "/peminjaman_guru");
       exit;
     } else {
-      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger', 'Peminjaman Guru');
       header("Location: " . BASEURL . "/peminjaman_guru");
       exit;
     }

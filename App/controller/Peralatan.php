@@ -25,11 +25,11 @@ class Peralatan extends Controller
   public function store()
   {
     if ($this->model("Peralatan_model")->insertPeralatan($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success', 'Peralatan');
       header("Location: " . BASEURL . "/peralatan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger', 'Peralatan');
       header("Location: " . BASEURL . "/peralatan");
       die;
     }
@@ -50,11 +50,11 @@ class Peralatan extends Controller
   public function update()
   {
     if ($this->model("Peralatan_model")->updatePeralatan($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success', 'Peralatan');
       header("Location: " . BASEURL . "/peralatan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger', 'Peralatan');
       header("Location: " . BASEURL . "/peralatan");
       die;
     }
@@ -63,11 +63,11 @@ class Peralatan extends Controller
   public function delete($id)
   {
     if ($this->model("Peralatan_model")->deletePeralatan($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success', 'Peralatan');
       header("Location: " . BASEURL . "/peralatan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger', 'Peralatan');
       header("Location: " . BASEURL . "/peralatan");
       die;
     }

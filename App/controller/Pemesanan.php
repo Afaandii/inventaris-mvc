@@ -23,11 +23,11 @@ class Pemesanan extends Controller
   public function store()
   {
     if ($this->model("Pemesanan_model")->insertPemesanan($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success', 'Pemesanan');
       header("Location: " . BASEURL . "/pemesanan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger', 'Pemesanan');
       header("Location: " . BASEURL . "/pemesanan");
       die;
     }
@@ -46,11 +46,11 @@ class Pemesanan extends Controller
   public function update()
   {
     if ($this->model("Pemesanan_model")->updatePemesanan($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success', 'Pemesanan');
       header("Location: " . BASEURL . "/pemesanan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger', 'Pemesanan');
       header("Location: " . BASEURL . "/pemesanan");
       die;
     }
@@ -59,11 +59,11 @@ class Pemesanan extends Controller
   public function delete($id)
   {
     if ($this->model('Pemesanan_model')->deletePemesanan($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success', 'Pemesanan');
       header("Location: " . BASEURL . "/pemesanan");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger', 'Pemesanan');
       header("Location: " . BASEURL . "/pemesanan");
       die;
     }

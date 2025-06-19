@@ -22,11 +22,11 @@ class Peminjam extends Controller
   public function store()
   {
     if ($this->model("Peminjam_model")->insertPeminjam($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Ditambahkan', 'success', 'Peminjam');
       header("Location: " . BASEURL . "/peminjam");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Ditambahkan', 'danger', 'Peminjam');
       header("Location: " . BASEURL . "/peminjam");
       die;
     }
@@ -44,11 +44,11 @@ class Peminjam extends Controller
   public function update()
   {
     if ($this->model('Peminjam_model')->updatePeminjam($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Diupdate', 'success');
+      Flasher::setFlash('Berhasil', 'Diupdate', 'success', 'Peminjam');
       header("Location: " . BASEURL . "/peminjam");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Diupdate', 'danger');
+      Flasher::setFlash('Gagal!', 'Diupdate', 'danger', 'Peminjam');
       header("Location: " . BASEURL . "/peminjam");
       die;
     }
@@ -57,11 +57,11 @@ class Peminjam extends Controller
   public function delete($id)
   {
     if ($this->model('Peminjam_model')->deletePeminjam($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success', 'Peminjam');
       header("Location: " . BASEURL . "/peminjam");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Dihapus', 'danger');
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger', 'Peminjam');
       header("Location: " . BASEURL . "/peminjam");
       die;
     }

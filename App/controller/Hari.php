@@ -22,11 +22,11 @@ class Hari extends Controller
   public function store()
   {
     if ($this->model('Hari_model')->insertHari($_POST) > 0) {
-      Flasher::setFlash('Behasil', 'Di tambahkan', 'success');
+      Flasher::setFlash('Hari', 'Behasil', 'Di tambahkan', 'success');
       header("Location:" . BASEURL . "/hari");
       exit;
     } else {
-      Flasher::setFlash('Gagal!', 'Di tambahkan', 'danger');
+      Flasher::setFlash('Hari', 'Gagal!', 'Di tambahkan', 'danger');
       header("Location:" . BASEURL . "/hari");
       exit;
     }
@@ -44,11 +44,11 @@ class Hari extends Controller
   public function update()
   {
     if ($this->model('Hari_model')->updateHari($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Di Update', 'success');
+      Flasher::setFlash('Hari', 'Berhasil', 'Di Update', 'success');
       header("Location: " . BASEURL . "/hari");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Di Update', 'danger');
+      Flasher::setFlash('Hari', 'Gagal!', 'Di Update', 'danger');
       header("Location: " . BASEURL . "/hari");
       die;
     }
@@ -57,11 +57,11 @@ class Hari extends Controller
   public function delete($id)
   {
     if ($this->model('Hari_model')->deleteHari($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Di Hapus', 'success');
+      Flasher::setFlash('Hari', 'Berhasil', 'Di Hapus', 'success');
       header("Location: " . BASEURL . "/hari");
       die;
     } else {
-      Flasher::setFlash('Gagal!', 'Di Hapus', 'danger');
+      Flasher::setFlash('Hari', 'Gagal!', 'Di Hapus', 'danger');
       header("Location: " . BASEURL . "/hari");
       die;
     }

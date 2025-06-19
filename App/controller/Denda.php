@@ -22,11 +22,11 @@ class Denda extends Controller
   public function store()
   {
     if ($this->model('Denda_model')->insertDenda($_POST) > 0) {
-      Flasher::setFlash('Behasil', 'Ditambahkan', 'success');
+      Flasher::setFlash('Denda', 'Behasil', 'Ditambahkan', 'success');
       header("Location: " . BASEURL . "/denda");
       exit;
     } else {
-      Flasher::setFlash('gagal!', 'ditambahkan', 'danger');
+      Flasher::setFlash('Denda', 'Gagal!', 'ditambahkan', 'danger');
       header("Location: " . BASEURL . "/denda");
       exit;
     }
@@ -44,11 +44,11 @@ class Denda extends Controller
   public function update()
   {
     if ($this->model('Denda_model')->updateDenda($_POST) > 0) {
-      Flasher::setFlash('Berhasil', 'Di update', 'success');
+      Flasher::setFlash('Denda', 'Berhasil', 'Di update', 'success');
       header("Location: " . BASEURL . '/denda');
       exit;
     } else {
-      Flasher::setFlash('Gagal!!!', 'Di update', 'danger');
+      Flasher::setFlash('Denda', 'Gagal!', 'Di update', 'danger');
       header("Location: " . BASEURL . "/denda");
       exit;
     }
@@ -57,11 +57,11 @@ class Denda extends Controller
   public function delete($id)
   {
     if ($this->model('Denda_model')->deleteDenda($id) > 0) {
-      Flasher::setFlash('Berhasil', 'Di delete', 'success');
+      Flasher::setFlash('Denda', 'Berhasil', 'Di delete', 'success');
       header("Location: " . BASEURL . '/denda');
       exit;
     } else {
-      Flasher::setFlash('Gagal!!!', 'Di delete', 'danger');
+      Flasher::setFlash('Denda', 'Gagal!', 'Di delete', 'danger');
       header("Location: " . BASEURL . "/denda");
       exit;
     }

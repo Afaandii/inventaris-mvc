@@ -24,11 +24,11 @@ class Guru extends Controller
   public function store()
   {
     if ($this->model('Guru_model')->tambahGuru($_POST) > 0) {
-      Flasher::setFlash('Guru', 'Berhasil', 'Di tambahkan', 'success');
+      Flasher::setFlash('Berhasil', 'Di tambahkan', 'success', 'Guru');
       header("Location: " . BASEURL . '/guru');
       exit;
     } else {
-      Flasher::setFlash('Guru', 'Gagal!', 'Di tambahkan', 'danger');
+      Flasher::setFlash('Gagal!', 'Di tambahkan', 'danger', 'Guru');
       header("Location: " . BASEURL . "/guru");
       exit;
     }
@@ -48,11 +48,11 @@ class Guru extends Controller
   public function update()
   {
     if ($this->model('Guru_model')->updateGuru($_POST) > 0) {
-      Flasher::setFlash('Guru', 'Berhasil', 'Di update', 'success');
+      Flasher::setFlash('Berhasil', 'Di update', 'success', 'Guru');
       header("Location: " . BASEURL . '/guru');
       exit;
     } else {
-      Flasher::setFlash('Guru', 'Gagal!', 'Di update', 'danger');
+      Flasher::setFlash('Gagal!', 'Di update', 'danger', 'Guru');
       header("Location: " . BASEURL . "/guru");
       exit;
     }
@@ -61,11 +61,11 @@ class Guru extends Controller
   public function delete($id)
   {
     if ($this->model('Guru_model')->deleteGuru($id) > 0) {
-      Flasher::setFlash('Guru', 'Berhasil', 'Di delete', 'success');
+      Flasher::setFlash('Berhasil', 'Di delete', 'success', 'Guru');
       header("Location: " . BASEURL . '/guru');
       exit;
     } else {
-      Flasher::setFlash('Guru', 'Gagal!', 'Di delete', 'danger');
+      Flasher::setFlash('Gagal!', 'Di delete', 'danger', 'Guru');
       header("Location: " . BASEURL . "/guru");
       exit;
     }

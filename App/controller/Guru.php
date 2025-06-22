@@ -70,4 +70,24 @@ class Guru extends Controller
       exit;
     }
   }
+
+  public function getJabatanByPeminjam()
+  {
+    $idPeminjam = $_POST['id_peminjam'] ?? null;
+
+    if (!$idPeminjam) {
+      echo "<option value=''>ID tidak valid</option>";
+      return;
+    }
+
+    $guru = $this->model('Guru_model')->getJabatanByPeminjam($idPeminjam);
+
+    if ($guru) {
+      echo "<option value='{$guru['ID_JABATAN']} - {$guru['NAMA_JABATAN']}'>
+          {$guru['ID_JABATAN']} - {$guru['NAMA_JABATAN']}
+          </option>";
+    } else {
+      echo "<option value=''>Jabatan tidak ditemukan</option>";
+    }
+  }
 }

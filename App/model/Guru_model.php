@@ -114,4 +114,16 @@ class Guru_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getJabatanByPeminjam($idPeminjam)
+  {
+    $query = "SELECT jabatan.ID_JABATAN, jabatan.NAMA_JABATAN
+            FROM guru
+            JOIN jabatan ON guru.ID_JABATAN = jabatan.ID_JABATAN
+            WHERE guru.ID_PEMINJAM = :id_peminjam";
+
+    $this->db->query($query);
+    $this->db->bind('id_peminjam', $idPeminjam);
+    return $this->db->single();
+  }
 }

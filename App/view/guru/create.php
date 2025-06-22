@@ -36,6 +36,7 @@
                   <br>
                   <label for="jabatan">Jabatan</label>
                   <select name="jabatan" id="jabatan">
+                    <option value="">Pilih peminjam dulu</option>
                     <?php
                     foreach ($data['jabatan'] as $data) {
                       echo "<option value='{$data['ID_JABATAN']} - {$data['NAMA_JABATAN']}'>

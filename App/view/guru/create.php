@@ -28,15 +28,16 @@
                   <br>
                   <label for="peminjam">Peminjam</label>
                   <select name="peminjam" id="peminjam">
+                    <option value="">Pilih Peminjam</option>
                     <?php foreach ($data['peminjam'] as $peminjam): ?>
-                      <option value="<?= $peminjam['ID_PEMINJAM'] ?>"><?= $peminjam['ID_PEMINJAM'] ?> -
-                        <?= $peminjam['USERNAME_PEMINJAM'] ?></option>
+                    <option value="<?= $peminjam['ID_PEMINJAM'] ?>"><?= $peminjam['ID_PEMINJAM'] ?> -
+                      <?= $peminjam['USERNAME_PEMINJAM'] ?></option>
                     <?php endforeach; ?>
                   </select>
                   <br>
                   <label for="jabatan">Jabatan</label>
                   <select name="jabatan" id="jabatan">
-                    <option value="">Pilih peminjam dulu</option>
+                    <option value="">Pilih Jabatan</option>
                     <?php
                     foreach ($data['jabatan'] as $data) {
                       echo "<option value='{$data['ID_JABATAN']} - {$data['NAMA_JABATAN']}'>

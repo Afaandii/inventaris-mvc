@@ -28,6 +28,7 @@
                   <br>
                   <label for="peminjam">Peminjam</label>
                   <select name="peminjam" id="peminjam">
+                    <option value="">Pilih Peminjam</option>
                     <?php foreach ($data['peminjam'] as $peminjam): ?>
                       <option value="<?= $peminjam['ID_PEMINJAM'] ?>">
                         <?= $peminjam['ID_PEMINJAM'] ?> - <?= $peminjam['USERNAME_PEMINJAM'] ?>
@@ -37,6 +38,7 @@
                   <br>
                   <label for="kelsis">Kelas Siswa</label>
                   <select name="kelsis" id="kelsis">
+                    <option value="">Pilih Kelas Siswa</option>
                     <?php foreach ($data['kelsis'] as $kelsis): ?>
                       <option value="<?= $kelsis['ID_KELASSISWA'] ?>">
                         <?= $kelsis['ID_KELASSISWA'] ?> - <?= $kelsis['NAMA_KELASSISWA'] ?>

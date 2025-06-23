@@ -70,4 +70,24 @@ class Siswa extends Controller
       die;
     }
   }
+
+  public function getKelasSiswaByPeminjam()
+  {
+    $idPeminjam = $_POST['id_peminjam'] ?? null;
+
+    if (!$idPeminjam) {
+      echo "<option value=''>ID tidak valid</option>";
+      return;
+    }
+
+    $siswa = $this->model('Siswa_model')->getKelasSiswaByPeminjam($idPeminjam);
+
+    if ($siswa) {
+      echo "<option value='{$siswa['ID_KELASSISWA']} - {$siswa['NAMA_KELASSISWA']}'>
+          {$siswa['ID_KELASSISWA']} - {$siswa['NAMA_KELASSISWA']}
+          </option>";
+    } else {
+      echo "<option value=''>Kelas siswa tidak ditemukan</option>";
+    }
+  }
 }

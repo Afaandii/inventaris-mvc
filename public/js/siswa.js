@@ -1,6 +1,7 @@
 $(document).ready(function() {
     $('#peminjam').on('change', function () {
         var idPeminjam = $(this).val();
+        console.log(idPeminjam)
         
         $.ajax({
             type: 'POST',

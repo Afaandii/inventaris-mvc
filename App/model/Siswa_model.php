@@ -98,4 +98,16 @@ class Siswa_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function getKelasSiswaByPeminjam($idPeminjam)
+  {
+    $query = "SELECT kelas_siswa.ID_KELASSISWA, kelas_siswa.NAMA_KELASSISWA
+            FROM siswa
+            JOIN kelas_siswa ON siswa.ID_KELASSISWA = kelas_siswa.ID_KELASSISWA
+            WHERE siswa.ID_PEMINJAM = :id_peminjam";
+
+    $this->db->query($query);
+    $this->db->bind('id_peminjam', $idPeminjam);
+    return $this->db->single();
+  }
 }

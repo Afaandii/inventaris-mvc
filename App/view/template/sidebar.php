@@ -37,8 +37,38 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            <li class="nav-item">
-              <a href="#" class="nav-link ">
+            <?php
+            $currentUrl = $_SERVER['REQUEST_URI'];
+
+            // Untuk menu Transaksi
+            $isTransaksiActive =
+              strpos($currentUrl, '/pemesanan') !== false ||
+              strpos($currentUrl, '/peminjam') !== false ||
+              strpos($currentUrl, '/peminjaman') !== false ||
+              strpos($currentUrl, '/perbaikan') !== false ||
+              strpos($currentUrl, '/peminjaman_siswa') !== false ||
+              strpos($currentUrl, '/peminjaman_guru') !== false;
+
+            // Untuk menu Master
+            $isMasterActive =
+              strpos($currentUrl, '/denda') !== false ||
+              strpos($currentUrl, '/hari') !== false ||
+              strpos($currentUrl, '/pelajaran') !== false ||
+              strpos($currentUrl, '/jurusan') !== false ||
+              strpos($currentUrl, '/kelas') !== false ||
+              strpos($currentUrl, '/kelas_siswa') !== false ||
+              strpos($currentUrl, '/siswa') !== false ||
+              strpos($currentUrl, '/jabatan') !== false ||
+              strpos($currentUrl, '/guru') !== false ||
+              strpos($currentUrl, '/jadwal') !== false ||
+              strpos($currentUrl, '/jenis') !== false ||
+              strpos($currentUrl, '/warna') !== false ||
+              strpos($currentUrl, '/merk') !== false ||
+              strpos($currentUrl, '/peralatan') !== false;
+            ?>
+
+            <li class="nav-item <?= $isTransaksiActive ? 'menu-open' : '' ?>">
+              <a href="#" class="nav-link <?= $isTransaksiActive ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Transaksi
@@ -47,45 +77,51 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/pemesanan" class="nav-link">
+                  <a href="<?= BASEURL; ?>/pemesanan"
+                    class="nav-link <?= strpos($currentUrl, '/pemesanan') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Pemesanan</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/peminjam" class="nav-link">
+                  <a href="<?= BASEURL; ?>/peminjam"
+                    class="nav-link <?= strpos($currentUrl, '/peminjam') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Peminjam</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/peminjaman" class="nav-link">
+                  <a href="<?= BASEURL; ?>/peminjaman"
+                    class="nav-link <?= strpos($currentUrl, '/peminjaman') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Peminjaman</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/perbaikan" class="nav-link">
+                  <a href="<?= BASEURL; ?>/perbaikan"
+                    class="nav-link <?= strpos($currentUrl, '/perbaikan') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Perbaikan</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/peminjaman_siswa" class="nav-link">
+                  <a href="<?= BASEURL; ?>/peminjaman_siswa"
+                    class="nav-link <?= strpos($currentUrl, '/peminjaman_siswa') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Peminjaman Siswa</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/peminjaman_guru" class="nav-link">
+                  <a href="<?= BASEURL; ?>/peminjaman_guru"
+                    class="nav-link <?= strpos($currentUrl, '/peminjaman_guru') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Peminjaman Guru</p>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
+            <li class="nav-item <?= $isMasterActive ? 'menu-open' : '' ?>">
+              <a href="#" class="nav-link <?= $isMasterActive ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-database"></i>
                 <p>
                   Master
@@ -94,85 +130,99 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/denda" class="nav-link">
+                  <a href="<?= BASEURL; ?>/denda"
+                    class="nav-link <?= strpos($currentUrl, '/denda') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Denda</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/hari" class="nav-link">
+                  <a href="<?= BASEURL; ?>/hari"
+                    class="nav-link <?= strpos($currentUrl, '/hari') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Hari</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/pelajaran" class="nav-link">
+                  <a href="<?= BASEURL; ?>/pelajaran"
+                    class="nav-link <?= strpos($currentUrl, '/pelajaran') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Pelajaran</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/jurusan" class="nav-link">
+                  <a href="<?= BASEURL; ?>/jurusan"
+                    class="nav-link <?= strpos($currentUrl, '/jurusan') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Jurusan</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/kelas" class="nav-link">
+                  <a href="<?= BASEURL; ?>/kelas"
+                    class="nav-link <?= strpos($currentUrl, '/kelas') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Kelas</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/kelas_siswa" class="nav-link">
+                  <a href="<?= BASEURL; ?>/kelas_siswa"
+                    class="nav-link <?= strpos($currentUrl, '/kelas_siswa') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Kelas Siswa</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/siswa" class="nav-link">
+                  <a href="<?= BASEURL; ?>/siswa"
+                    class="nav-link <?= strpos($currentUrl, '/siswa') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Siswa</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/jabatan" class="nav-link">
+                  <a href="<?= BASEURL; ?>/jabatan"
+                    class="nav-link <?= strpos($currentUrl, '/jabatan') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Jabatan</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/guru" class="nav-link">
+                  <a href="<?= BASEURL; ?>/guru"
+                    class="nav-link <?= strpos($currentUrl, '/guru') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Guru</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/jadwal" class="nav-link">
+                  <a href="<?= BASEURL; ?>/jadwal"
+                    class="nav-link <?= strpos($currentUrl, '/jadwal') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Jadwal</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/jenis" class="nav-link">
+                  <a href="<?= BASEURL; ?>/jenis"
+                    class="nav-link <?= strpos($currentUrl, '/jenis') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Jenis</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/warna" class="nav-link">
+                  <a href="<?= BASEURL; ?>/warna"
+                    class="nav-link <?= strpos($currentUrl, '/warna') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Warna</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/merk" class="nav-link">
+                  <a href="<?= BASEURL; ?>/merk"
+                    class="nav-link <?= strpos($currentUrl, '/merk') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Merk</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= BASEURL; ?>/peralatan" class="nav-link">
+                  <a href="<?= BASEURL; ?>/peralatan"
+                    class="nav-link <?= strpos($currentUrl, '/peralatan') !== false ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Peralatan</p>
                   </a>

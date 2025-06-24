@@ -3,8 +3,9 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Tabel Pelajaran</h1>
+        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+          <h1 class="m-0 font-weight-bold">Manage Tabel Pelajaran</h1>
+          <a class="btn btn-secondary" href="<?= BASEURL ?>/pelajaran/create">Tambah Pelajaran</a>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -42,8 +43,10 @@
                         <tr>
                           <td><?php echo $i; ?></td>
                           <td>
-                            <a href="<?= BASEURL ?>/pelajaran/edit/<?= $mapel["ID_PELAJARAN"]; ?>">Update</a> |
-                            <a href="<?= BASEURL ?>/pelajaran/delete/<?php echo $mapel["ID_PELAJARAN"]; ?>"
+                            <a class="btn btn-warning mr-2"
+                              href="<?= BASEURL ?>/pelajaran/edit/<?= $mapel["ID_PELAJARAN"]; ?>">Update</a>
+                            <a class="btn btn-danger"
+                              href="<?= BASEURL ?>/pelajaran/delete/<?php echo $mapel["ID_PELAJARAN"]; ?>"
                               onclick="return confirm('Apakah yakin menghapus data?')">Delete</a>
                           </td>
                           <td><?= $mapel["KODE_PELAJARAN"]; ?></td>
@@ -53,7 +56,6 @@
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="<?= BASEURL ?>/pelajaran/create">Tambah Pelajaran</a>
                 </div>
                 <!-- /.card-body -->
               </div>

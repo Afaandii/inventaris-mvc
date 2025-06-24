@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Update Kelas</h1>
+          <h1 class="font-weight-bold">Form Edit Kelas</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -25,8 +25,9 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Pelajaran</label>
-                  <input type="text" name="kode" id="kode" value="<?= $data['pelajaran']['KODE_PELAJARAN'] ?>" readonly>
-                  <br>
+                  <input class="form-control mb-2" type="text" name="kode" id="kode"
+                    value="<?= $data['pelajaran']['KODE_PELAJARAN'] ?>" readonly>
+
                   <label for="pelajaran">Pelajaran</label>
                   <input type="text" name="pelajaran" class="form-control" id="pelajaran"
                     placeholder="Masukan Pelajaran" value="<?php echo $data['pelajaran']["NAMA_PELAJARAN"]; ?>">
@@ -34,7 +35,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Edit Pelajaran</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/pelajaran" class="btn btn-info float-md-right">Kembali</a>
               </div>
             </form>
           </div>

@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Tambah Denda</h1>
+          <h1 class="font-weight-bold">Form Edit Denda</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -25,8 +25,9 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Jabatan</label>
-                  <input type="text" name="kode" id="kode" value="<?= $data['jabatan']['KODE_JABATAN'] ?>" readonly>
-                  <br>
+                  <input class="form-control mb-2" type="text" name="kode" id="kode"
+                    value="<?= $data['jabatan']['KODE_JABATAN'] ?>" readonly>
+
                   <label for="jabatan">Nama Jabatan</label>
                   <input type="text" name="jabatan" class="form-control" id="jabatan" placeholder="Masukan Nama Jabatan"
                     value="<?php echo $data['jabatan']["NAMA_JABATAN"]; ?>">
@@ -34,7 +35,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Edit Hari</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/jabatan" class="btn btn-info float-md-right">Kembali</a>
               </div>
             </form>
           </div>

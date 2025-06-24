@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-12 d-flex justify-content-between align-items-center">
-          <h1 class="m-0">Manage Tabel Kelas</h1>
+          <h1 class="m-0 font-weight-bold">Manage Tabel Kelas</h1>
           <a href="<?= BASEURL ?>/kelas/create" class="btn btn-secondary">Tambah Kelas</a>
         </div><!-- /.col -->
       </div><!-- /.row -->

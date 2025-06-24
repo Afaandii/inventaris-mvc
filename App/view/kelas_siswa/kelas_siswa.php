@@ -3,8 +3,9 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Tabel Kelas Siswa</h1>
+        <div class="col-sm-12 d-flex justify-content-between align-content-center">
+          <h1 class="m-0 font-weight-bold">Manage Tabel Kelas Siswa</h1>
+          <a href="<?= BASEURL ?>/kelas_siswa/create" class="btn btn-secondary">Tambah Kelas Siswa</a>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -40,23 +41,23 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['kelas_siswa'] as $kelSis) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="<?= BASEURL ?>/kelas_siswa/edit/<?php echo $kelSis["ID_KELASSISWA"]; ?>">Update</a> |
-                          <a href="<?= BASEURL ?>/kelas_siswa/delete/<?= $kelSis["ID_KELASSISWA"]; ?>"
-                            onclick="return confirm('Apakah yakin menghapus data?')">Delete</a>
-                        </td>
-                        <td><?= $kelSis["KODE_KELASSISWA"]; ?></td>
-                        <td><?= $kelSis["NAMA_KELASSISWA"]; ?></td>
-                        <td><?php echo $kelSis["NAMA_JURUSAN"]; ?></td>
-                        <td><?php echo $kelSis["NAMA_KELAS"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a class="btn btn-warning mr-2"
+                              href="<?= BASEURL ?>/kelas_siswa/edit/<?php echo $kelSis["ID_KELASSISWA"]; ?>">Update</a>
+                            <a href="<?= BASEURL ?>/kelas_siswa/delete/<?= $kelSis["ID_KELASSISWA"]; ?>"
+                              class="btn btn-danger" onclick="return confirm('Apakah yakin menghapus data?')">Delete</a>
+                          </td>
+                          <td><?= $kelSis["KODE_KELASSISWA"]; ?></td>
+                          <td><?= $kelSis["NAMA_KELASSISWA"]; ?></td>
+                          <td><?php echo $kelSis["NAMA_JURUSAN"]; ?></td>
+                          <td><?php echo $kelSis["NAMA_KELAS"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="<?= BASEURL ?>/kelas_siswa/create">Tambah Kelas Siswa</a>
                 </div>
                 <!-- /.card-body -->
               </div>

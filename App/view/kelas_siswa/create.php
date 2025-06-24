@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Tambah Kelas Siswa</h1>
+          <h1 class="font-weight-bold">Form Tambah Kelas Siswa</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -24,25 +24,29 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Kelas Siswa</label>
-                  <input type="text" name="kode" id="kode" readonly value="<?= $data['kode'] ?>"> <br>
+                  <input type="text" name="kode" id="kode" readonly value="<?= $data['kode'] ?>"
+                    class="form-control mb-2">
+
                   <label for="jurusan">Jurusan</label>
-                  <select name="jurusan" id="jurusan" required>
+                  <select class="form-select mb-2" name="jurusan" id="jurusan" required>
+                    <option value="">Pilih Jurusan</option>
                     <?php foreach ($data['jurusan'] as $jurusan): ?>
-                    <option value="<?= $jurusan['ID_JURUSAN'] ?>">
-                      <?= $jurusan['ID_JURUSAN'] ?> - <?= $jurusan['NAMA_JURUSAN'] ?>
-                    </option>
+                      <option value="<?= $jurusan['ID_JURUSAN'] ?>">
+                        <?= $jurusan['ID_JURUSAN'] ?> - <?= $jurusan['NAMA_JURUSAN'] ?>
+                      </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
+
                   <label for="kelas">Kelas</label>
-                  <select name="kelas" id="kelas">
+                  <select class="form-select mb-2" name="kelas" id="kelas">
+                    <option value="">Pilih Kelas</option>
                     <?php foreach ($data['kelas'] as $kelas): ?>
-                    <option value="<?= $kelas['ID_KELAS'] ?>">
-                      <?= $kelas['ID_KELAS'] ?> - <?= $kelas['NAMA_KELAS'] ?>
-                    </option>
+                      <option value="<?= $kelas['ID_KELAS'] ?>">
+                        <?= $kelas['ID_KELAS'] ?> - <?= $kelas['NAMA_KELAS'] ?>
+                      </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
+
                   <label for="kelSis">Kelas Siswa</label>
                   <input type="text" name="kelasSiswa" class="form-control" id="kelSis"
                     placeholder="Masukan Kelas Siswa">
@@ -50,7 +54,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Tambah Kelas Siswa</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/kelas_siswa" class="btn btn-info float-md-right">Kembali</a>
               </div>
             </form>
           </div>

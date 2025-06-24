@@ -24,10 +24,10 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Siswa</label>
-                  <input type="text" id="kode" name="kode" value="<?= $data['kode'] ?>" readonly>
-                  <br>
+                  <input class="form-control mb-2" type="text" id="kode" name="kode" value="<?= $data['kode'] ?>"
+                    readonly>
                   <label for="peminjam">Peminjam</label>
-                  <select name="peminjam" id="peminjam">
+                  <select class="form-select mb-2" name="peminjam" id="peminjam">
                     <option value="">Pilih Peminjam</option>
                     <?php foreach ($data['peminjam'] as $peminjam): ?>
                       <option value="<?= $peminjam['ID_PEMINJAM'] ?>">
@@ -35,9 +35,8 @@
                       </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
                   <label for="kelsis">Kelas Siswa</label>
-                  <select name="kelsis" id="kelsis">
+                  <select class="form-select mb-2" name="kelsis" id="kelsis">
                     <option value="">Pilih Kelas Siswa</option>
                     <?php foreach ($data['kelsis'] as $kelsis): ?>
                       <option value="<?= $kelsis['ID_KELASSISWA'] ?>">
@@ -45,24 +44,25 @@
                       </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
                   <label for="nis">Nis Siswa</label>
-                  <input type="number" name="nis" class="form-control" id="nis" placeholder="Masukan Nis Siswa">
+                  <input type="number" name="nis" class="form-control mb-2" id="nis" placeholder="Masukan Nis Siswa">
                   <label for="namSis">Nama Siswa</label>
-                  <input type="text" name="nama" class="form-control" id="namSis" placeholder="Masukan Nama Siswa">
+                  <input type="text" name="nama" class="form-control mb-2" id="namSis" placeholder="Masukan Nama Siswa">
                   <label for="alSis">Alamat Siswa</label>
-                  <input type="text" name="alamat" class="form-control" id="alSis" placeholder="Masukan Alamat Siswa">
+                  <input type="text" name="alamat" class="form-control mb-2" id="alSis"
+                    placeholder="Masukan Alamat Siswa">
                   <label for="angSis">Angkatan Siswa</label>
-                  <input type="number" name="angkatan" class="form-control" id="angSis"
+                  <input type="number" name="angkatan" class="form-control mb-2" id="angSis"
                     placeholder="Masukan Angkatan Siswa">
                   <label for="ketSis">Keterangan Siswa</label>
                   <input type="text" name="keterangan" class="form-control" id="ketSis"
-                    placeholder="Masukan Ketereangan Siswa">
+                    placeholder="Masukan Keterangan Siswa">
                 </div>
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Tambah Siswa</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/siswa" class="btn btn-warning float-md-right">Kembali</a>
               </div>
             </form>
           </div>

@@ -3,11 +3,12 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Tabel Siswa</h1>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
+        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+          <h1 class="m-0 font-weight-bold">Manage Tabel Siswa</h1>
+          <a href="<?= BASEURL ?>/siswa/create" class="btn btn-secondary">Tambah Siswa</a>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- /.content-header -->
 
@@ -26,7 +27,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
+                  <table id="example2" class="table table-bordered table-hover table-responsive">
                     <thead>
                       <tr>
                         <th>No</th>
@@ -60,7 +61,6 @@
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="<?= BASEURL ?>/siswa/create">Tambah Siswa</a>
                 </div>
                 <!-- /.card-body -->
               </div>

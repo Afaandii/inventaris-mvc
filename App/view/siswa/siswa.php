@@ -45,10 +45,12 @@
                       <?php foreach ($data['siswa'] as $sis) { ?>
                         <tr>
                           <td><?php echo $i; ?></td>
-                          <td>
-                            <a href="<?= BASEURL ?>/siswa/edit/<?= $sis["ID_SISWA"]; ?>">Update</a> |
+                          <td class="d-flex">
+                            <a href="<?= BASEURL ?>/siswa/edit/<?= $sis["ID_SISWA"]; ?>"
+                              class="btn btn-warning mr-2">Update</a>
                             <a href="<?= BASEURL ?>/siswa/delete/<?= $sis["ID_SISWA"]; ?>"
-                              onclick="return confirm('Apakah yakin ingin menghapus data?')">Delete</a>
+                              onclick="return confirm('Apakah yakin ingin menghapus data?')"
+                              class="btn btn-danger">Delete</a>
                           </td>
                           <td><?= $sis["KODE_SISWA"]; ?></td>
                           <td><?php echo $sis["NIS"]; ?></td>

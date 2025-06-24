@@ -3,8 +3,9 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Tabel Hari</h1>
+        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+          <h1 class="m-0 font-weight-bold">Manage Tabel Hari</h1>
+          <a href="<?= BASEURL ?>/hari/create" class="btn btn-secondary">Tambah Hari</a>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -39,21 +40,21 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['hari'] as $har) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="<?= BASEURL ?>/hari/edit/<?= $har["ID_HARI"]; ?>">Update</a> |
-                          <a href="<?= BASEURL ?>/hari/delete/<?= $har["ID_HARI"]; ?>"
-                            onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
-                        </td>
-                        <td><?= $har["KODE_HARI"]; ?></td>
-                        <td><?php echo $har["NAMA_HARI"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a class="btn btn-warning mr-2"
+                              href="<?= BASEURL ?>/hari/edit/<?= $har["ID_HARI"]; ?>">Update</a>
+                            <a class="btn btn-danger" href="<?= BASEURL ?>/hari/delete/<?= $har["ID_HARI"]; ?>"
+                              onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
+                          </td>
+                          <td><?= $har["KODE_HARI"]; ?></td>
+                          <td><?php echo $har["NAMA_HARI"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="<?= BASEURL ?>/hari/create">Tambah Hari</a>
                 </div>
                 <!-- /.card-body -->
               </div>

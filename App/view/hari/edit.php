@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Edit Hari</h1>
+          <h1 class="font-weight-bold">Form Edit Hari</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -25,7 +25,9 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Hari</label>
-                  <input type="text" name="kodeHar" id="kode" value="<?= $data['hari']['KODE_HARI'] ?>" readonly> <br>
+                  <input class="form-control mb-2" type="text" name="kodeHar" id="kode"
+                    value="<?= $data['hari']['KODE_HARI'] ?>" readonly>
+
                   <label for="hari">Hari</label>
                   <input type="text" name="hari" class="form-control" id="hari" placeholder="Masukan Hari"
                     value="<?php echo $data['hari']["NAMA_HARI"]; ?>">
@@ -33,7 +35,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Edit Hari</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/hari" class="btn btn-info float-md-right">Kembali</a>
               </div>
             </form>
           </div>

@@ -3,8 +3,9 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Tabel Guru</h1>
+        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+          <h1 class="m-0 font-weight-bold">Manage Tabel Guru</h1>
+          <a class="btn btn-secondary" href="<?= BASEURL ?>/guru/create">Tambah Guru</a>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -28,7 +29,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
+                  <table id="example2" class="table table-bordered table-hover table-responsive-md">
                     <thead>
                       <tr>
                         <th>No</th>
@@ -46,8 +47,9 @@
                         <tr>
                           <td><?php echo $i; ?></td>
                           <td>
-                            <a href="<?= BASEURL ?>/guru/edit/<?php echo $gur["ID_GURU"]; ?>">update</a> |
-                            <a href="<?= BASEURL ?>/guru/delete/<?php echo $gur["ID_GURU"]; ?> "
+                            <a class="btn btn-warning mr-2"
+                              href="<?= BASEURL ?>/guru/edit/<?php echo $gur["ID_GURU"]; ?>">update</a>
+                            <a class="btn btn-danger" href="<?= BASEURL ?>/guru/delete/<?php echo $gur["ID_GURU"]; ?> "
                               onclick="return confirm('Apakah Yakin Menghapus Data?')">Delete</a>
                           </td>
                           <td><?= $gur["KODE_GURU"]; ?></td>
@@ -60,7 +62,6 @@
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="<?= BASEURL ?>/guru/create">Tambah Guru</a>
                 </div>
                 <!-- /.card-body -->
               </div>

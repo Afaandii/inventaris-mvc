@@ -3,8 +3,9 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Tabel Warna</h1>
+        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+          <h1 class="m-0 font-weight-bold">Manage Tabel Warna</h1>
+          <a href="<?= BASEURL ?>/warna/create" class="btn btn-secondary">Tambah Warna</a>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -26,7 +27,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
+                  <table id="example2" class="table table-bordered table-hover table-responsive-md">
                     <thead>
                       <tr>
                         <th>No</th>
@@ -41,8 +42,9 @@
                       <tr>
                         <td><?php echo $i; ?></td>
                         <td>
-                          <a href="<?= BASEURL ?>/warna/edit/<?= $war["ID_WARNA"]; ?>">Update</a> |
-                          <a href="<?= BASEURL ?>/warna/delete/<?= $war["ID_WARNA"]; ?>"
+                          <a class="btn btn-warning mr-2"
+                            href="<?= BASEURL ?>/warna/edit/<?= $war["ID_WARNA"]; ?>">Update</a>
+                          <a class="btn btn-danger" href="<?= BASEURL ?>/warna/delete/<?= $war["ID_WARNA"]; ?>"
                             onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
                         </td>
                         <td><?= $war["KODE_WARNA"]; ?></td>
@@ -52,7 +54,6 @@
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="<?= BASEURL ?>/warna/create">Tambah Warna</a>
                 </div>
                 <!-- /.card-body -->
               </div>

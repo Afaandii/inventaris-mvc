@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Tambah Warna</h1>
+          <h1 class="font-weight-bold">Form Tambah Warna</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -24,15 +24,17 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Warna</label>
-                  <input type="text" name="kode" id="kode" value="<?= $data['kode']; ?>" readonly>
-                  <br>
+                  <input class="form-control mb-2" type="text" name="kode" id="kode" value="<?= $data['kode']; ?>"
+                    readonly>
+
                   <label for="warna">Nama Warna</label>
                   <input type="text" name="warna" class="form-control" id="warna" placeholder="Masukan Warna">
                 </div>
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Tambah Warna</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/warna" class="btn btn-info float-md-right">Kembali</a>
               </div>
             </form>
           </div>

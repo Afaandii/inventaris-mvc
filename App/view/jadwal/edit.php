@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Tambah Jadwal</h1>
+          <h1 class="font-weight-bold">Form Tambah Jadwal</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -25,53 +25,54 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Jadwal</label>
-                  <input type="text" id="kode" name="kode" value="<?= $data['jadwal']['KODE_JADWAL']; ?>" readonly>
-                  <br>
+                  <input class="form-control mb-2" type="text" id="kode" name="kode"
+                    value="<?= $data['jadwal']['KODE_JADWAL']; ?>" readonly>
+
                   <label for="kelsis">Kelas Siswa</label>
-                  <select name="kelsis" id="kelsis">
+                  <select class="form-select mb-2" name="kelsis" id="kelsis">
                     <?php foreach ($data['kelsis'] as $kelsis): ?>
-                    <?php $pilih = ($kelsis['ID_KELASSISWA'] == $data['jadwal']['ID_KELASSISWA']) ? 'selected' : ''; ?>
-                    <option value="<?= $kelsis['ID_KELASSISWA'] ?>" <?= $pilih ?>>
-                      <?= $kelsis['ID_KELASSISWA'] ?> - <?= $kelsis['NAMA_KELASSISWA'] ?>
-                    </option>
+                      <?php $pilih = ($kelsis['ID_KELASSISWA'] == $data['jadwal']['ID_KELASSISWA']) ? 'selected' : ''; ?>
+                      <option value="<?= $kelsis['ID_KELASSISWA'] ?>" <?= $pilih ?>>
+                        <?= $kelsis['ID_KELASSISWA'] ?> - <?= $kelsis['NAMA_KELASSISWA'] ?>
+                      </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
+
                   <label for="mapel">Pelajaran</label>
-                  <select name="mapel" id="mapel">
+                  <select class="form-select mb-2" name="mapel" id="mapel">
                     <?php foreach ($data['mapel'] as $mapel): ?>
-                    <?php $pilih = ($mapel['ID_PELAJARAN'] == $data['jadwal']['ID_PELAJARAN']) ? 'selected' : ''; ?>
-                    <option value="<?= $mapel['ID_PELAJARAN'] ?>" <?= $pilih ?>>
-                      <?= $mapel['ID_PELAJARAN'] ?> - <?= $mapel['NAMA_PELAJARAN'] ?>
-                    </option>
+                      <?php $pilih = ($mapel['ID_PELAJARAN'] == $data['jadwal']['ID_PELAJARAN']) ? 'selected' : ''; ?>
+                      <option value="<?= $mapel['ID_PELAJARAN'] ?>" <?= $pilih ?>>
+                        <?= $mapel['ID_PELAJARAN'] ?> - <?= $mapel['NAMA_PELAJARAN'] ?>
+                      </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
+
                   <label for="guru">Guru</label>
-                  <select name="guru" id="guru">
+                  <select class="form-select mb-2" name="guru" id="guru">
                     <?php foreach ($data['guru'] as $guru): ?>
-                    <?php $pilih = ($guru['ID_GURU'] == $data['jadwal']['ID_GURU']) ? 'selected' : ''; ?>
-                    <option value="<?= $guru['ID_GURU'] ?>" <?= $pilih ?>>
-                      <?= $guru['ID_GURU'] ?> - <?= $guru['NAMA_GURU'] ?>
-                    </option>
+                      <?php $pilih = ($guru['ID_GURU'] == $data['jadwal']['ID_GURU']) ? 'selected' : ''; ?>
+                      <option value="<?= $guru['ID_GURU'] ?>" <?= $pilih ?>>
+                        <?= $guru['ID_GURU'] ?> - <?= $guru['NAMA_GURU'] ?>
+                      </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
+
                   <label for="hari">Hari</label>
-                  <select name="hari" id="hari">
+                  <select class="form-select mb-2" name="hari" id="hari">
                     <?php foreach ($data['hari'] as $hari): ?>
-                    <?php $pilih = ($hari['ID_HARI'] == $data['jadwal']['ID_HARI']) ? 'selected' : ''; ?>
-                    <option value="<?= $hari['ID_HARI'] ?>" <?= $pilih ?>>
-                      <?= $hari['ID_HARI'] ?> - <?= $hari['NAMA_HARI'] ?>
-                    </option>
+                      <?php $pilih = ($hari['ID_HARI'] == $data['jadwal']['ID_HARI']) ? 'selected' : ''; ?>
+                      <option value="<?= $hari['ID_HARI'] ?>" <?= $pilih ?>>
+                        <?= $hari['ID_HARI'] ?> - <?= $hari['NAMA_HARI'] ?>
+                      </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
+
                   <label for="jamsuk">Jam Masuk</label>
-                  <input type="time" name="jamsuk" class="form-control" id="jamsuk" placeholder="Masukan Jam Masuk"
+                  <input type="time" name="jamsuk" class="form-control mb-2" id="jamsuk" placeholder="Masukan Jam Masuk"
                     value="<?= $data['jadwal']['JAM_MASUK'] ?>">
                   <label for="jamkel">Jam Keluar</label>
-                  <input type="time" name="jamkel" class="form-control" id="jakel" placeholder="Masukan Jam Keluar"
+                  <input type="time" name="jamkel" class="form-control mb-2" id="jakel" placeholder="Masukan Jam Keluar"
                     value="<?= $data['jadwal']['JAM_KELUAR'] ?>">
                   <label for="semester">Semester</label>
                   <input type="text" name="semester" class="form-control" id="semester" placeholder="Masukan Semester"
@@ -80,7 +81,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Tambah Jadwal</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/jadwal" class="btn btn-info float-md-right text-decoration-none">Kembali</a>
               </div>
             </form>
           </div>

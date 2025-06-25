@@ -3,8 +3,9 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Tabel Jadwal</h1>
+        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+          <h1 class="m-0 font-weight-bold">Manage Tabel Jadwal</h1>
+          <a class="btn btn-secondary" href="<?= BASEURL ?>/jadwal/create">Tambah Jadwal</a>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -26,7 +27,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
+                  <table id="example2" class="table table-bordered table-hover table-responsive-md">
                     <thead>
                       <tr>
                         <th>No</th>
@@ -46,9 +47,10 @@
                       <?php foreach ($data['jadwal'] as $jad) { ?>
                         <tr>
                           <td><?php echo $i; ?></td>
-                          <td>
-                            <a href="<?= BASEURL ?>/jadwal/edit/<?php echo $jad["ID_JADWAL"]; ?>">Update</a> |
-                            <a href="<?= BASEURL ?>/jadwal/delete/<?php echo $jad["ID_JADWAL"]; ?>"
+                          <td width="20%">
+                            <a class="btn btn-warning mr-2"
+                              href="<?= BASEURL ?>/jadwal/edit/<?php echo $jad["ID_JADWAL"]; ?>">Update</a>
+                            <a class="btn btn-danger" href="<?= BASEURL ?>/jadwal/delete/<?php echo $jad["ID_JADWAL"]; ?>"
                               onclick="return confirm('Apakah anda yakin menghapus jadwal?')">Delete</a>
                           </td>
                           <td><?= $jad["KODE_JADWAL"]; ?></td>
@@ -64,7 +66,6 @@
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="<?= BASEURL ?>/jadwal/create">Tambah Jadwal</a>
                 </div>
                 <!-- /.card-body -->
               </div>

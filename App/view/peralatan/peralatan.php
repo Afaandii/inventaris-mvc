@@ -3,8 +3,9 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Tabel Peralatan</h1>
+        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+          <h1 class="m-0 font-weight-bold">Manage Tabel Peralatan</h1>
+          <a href="<?= BASEURL ?>/peralatan/create" class="btn btn-secondary">Tambah Peralatan</a>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -26,7 +27,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
+                  <table id="example2" class="table table-bordered table-hover table-responsive-md">
                     <thead>
                       <tr>
                         <th>No</th>
@@ -44,29 +45,28 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['peralatan'] as $alat) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="<?= BASEURL ?>/peralatan/edit/<?= $alat["ID_PERALATAN"]; ?>">Update</a>
-                          -----
-                          <a href="<?= BASEURL ?>/peralatan/delete/<?= $alat["ID_PERALATAN"]; ?>"
-                            onclick="return confirm('Apakah anda yakin ingin menghapus?')">Delete</a>
-                        </td>
-                        <td><?= $alat["KODE_PERALATAN"]; ?></td>
-                        <td><?= $alat["NAMA_PERALATAN"]; ?></td>
-                        <td><?= $alat["TANGGALBELI_PERALATAN"]; ?></td>
-                        <td><?= $alat["STATUS_PERALATAN"]; ?></td>
-                        <td><?= $alat["JUMLAHKERUSAKAN_PERALATAN"]; ?></td>
-                        <td><?= $alat["STATUSKETERSEDIAAN_PERALATAN"]; ?></td>
-                        <td><?= $alat["ATURANSERVICE_PERALATAN"]; ?></td>
-                        <td><img src="img/<?= $alat["IMAGE_PERALATAN"]; ?>" alt="gambar alat" width="65" height="55">
-                        </td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a href="<?= BASEURL ?>/peralatan/edit/<?= $alat["ID_PERALATAN"]; ?>"
+                              class="btn btn-warning mb-2">Update</a>
+                            <a class="btn btn-danger" href="<?= BASEURL ?>/peralatan/delete/<?= $alat["ID_PERALATAN"]; ?>"
+                              onclick="return confirm('Apakah anda yakin ingin menghapus?')">Delete</a>
+                          </td>
+                          <td><?= $alat["KODE_PERALATAN"]; ?></td>
+                          <td><?= $alat["NAMA_PERALATAN"]; ?></td>
+                          <td><?= $alat["TANGGALBELI_PERALATAN"]; ?></td>
+                          <td><?= $alat["STATUS_PERALATAN"]; ?></td>
+                          <td><?= $alat["JUMLAHKERUSAKAN_PERALATAN"]; ?></td>
+                          <td><?= $alat["STATUSKETERSEDIAAN_PERALATAN"]; ?></td>
+                          <td><?= $alat["ATURANSERVICE_PERALATAN"]; ?></td>
+                          <td><img src="img/<?= $alat["IMAGE_PERALATAN"]; ?>" alt="gambar alat" width="65" height="55">
+                          </td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="<?= BASEURL ?>/peralatan/create">Tambah Peralatan</a>
                 </div>
                 <!-- /.card-body -->
               </div>

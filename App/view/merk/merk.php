@@ -3,8 +3,9 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Tabel Merk</h1>
+        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+          <h1 class="m-0 font-weight-bold">Manage Tabel Merk</h1>
+          <a href="<?= BASEURL ?>/merk/create" class="btn btn-secondary">Tambah Merek</a>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -38,21 +39,21 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['merk'] as $mer) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a href="<?= BASEURL ?>/merk/edit/<?= $mer["ID_MERK"]; ?>">Update</a> |
-                          <a href="<?= BASEURL ?>/merk/delete/<?= $mer["ID_MERK"]; ?>"
-                            onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
-                        </td>
-                        <td><?= $mer["KODE_MERK"]; ?></td>
-                        <td><?php echo $mer["NAMA_MEREK"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a class="btn btn-warning mr-2"
+                              href="<?= BASEURL ?>/merk/edit/<?= $mer["ID_MERK"]; ?>">Update</a>
+                            <a class="btn btn-danger" href="<?= BASEURL ?>/merk/delete/<?= $mer["ID_MERK"]; ?>"
+                              onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
+                          </td>
+                          <td><?= $mer["KODE_MERK"]; ?></td>
+                          <td><?php echo $mer["NAMA_MEREK"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="<?= BASEURL ?>/merk/create">Tambah Merek</a>
                 </div>
                 <!-- /.card-body -->
               </div>

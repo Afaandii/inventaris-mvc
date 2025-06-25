@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Update Merk</h1>
+          <h1 class="font-weight-bold">Form Edit Merk</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -25,7 +25,8 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Merk</label>
-                  <input type="text" name="kode" value="<?= $data['merk']["KODE_MERK"]; ?>" readonly id="kode"> <br>
+                  <input type="text" name="kode" value="<?= $data['merk']["KODE_MERK"]; ?>" readonly id="kode"
+                    class="form-control mb-2">
                   <label for="merk">Merek</label>
                   <input type="text" name="merk" class="form-control" id="merkCre" placeholder="Masukan Merek"
                     value="<?php echo $data['merk']["NAMA_MEREK"]; ?>">
@@ -33,7 +34,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Edit Merk</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/merk" class="btn btn-info float-md-right">Kembali</a>
               </div>
             </form>
           </div>

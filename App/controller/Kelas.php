@@ -3,6 +3,10 @@ class Kelas extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['kelas'] = $this->model('Kelas_model')->getAllKelas();
     $this->view('template/header');
     $this->view('kelas/kelas', $data);

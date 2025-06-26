@@ -3,6 +3,10 @@ class Guru extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['guru'] = $this->model('Guru_model')->getAllGuru();
     $this->view('template/header');
     $this->view('guru/guru', $data);

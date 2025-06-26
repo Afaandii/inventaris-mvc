@@ -3,6 +3,10 @@ class Pemesanan extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['pemesanan'] = $this->model('Pemesanan_model')->getAllPemesanan();
     $this->view('template/header');
     $this->view('pemesanan/pemesanan', $data);

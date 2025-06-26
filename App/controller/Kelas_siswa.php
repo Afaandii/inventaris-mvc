@@ -3,6 +3,10 @@ class Kelas_siswa extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['kelas_siswa'] = $this->model('Kelas_siswa_model')->getAllKelasSiswa();
     $this->view('template/header');
     $this->view('kelas_siswa/kelas_siswa', $data);

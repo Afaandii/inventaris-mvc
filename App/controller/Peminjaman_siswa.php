@@ -3,6 +3,10 @@ class Peminjaman_siswa extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['peminjaman_siswa'] = $this->model('Peminjaman_siswa_model')->getAllPeminjamanSiswa();
     $this->view('template/header');
     $this->view('peminjaman_siswa/peminjaman_siswa', $data);

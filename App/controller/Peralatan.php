@@ -3,6 +3,10 @@ class Peralatan extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['peralatan'] = $this->model('Peralatan_model')->getAllPeralatan();
     $this->view('template/header');
     $this->view('peralatan/peralatan', $data);

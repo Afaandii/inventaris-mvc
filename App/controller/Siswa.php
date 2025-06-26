@@ -3,6 +3,10 @@ class Siswa extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['siswa'] = $this->model('Siswa_model')->getAllSiswa();
     $this->view('template/header');
     $this->view('siswa/siswa', $data);

@@ -3,6 +3,10 @@ class Warna extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['warna'] = $this->model('Warna_model')->getAllWarna();
     $this->view('template/header');
     $this->view('warna/warna', $data);

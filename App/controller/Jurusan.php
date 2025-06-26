@@ -3,6 +3,10 @@ class Jurusan extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['jurusan'] = $this->model('Jurusan_model')->getAllJurusan();
     $this->view('template/header');
     $this->view('jurusan/jurusan', $data);

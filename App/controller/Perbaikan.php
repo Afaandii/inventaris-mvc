@@ -3,6 +3,10 @@ class Perbaikan extends Controller
 {
   public function  index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['perbaikan'] = $this->model('Perbaikan_model')->getAllPerbaikan();
     $this->view('template/header');
     $this->view('perbaikan/perbaikan', $data);

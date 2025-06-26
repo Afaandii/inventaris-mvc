@@ -3,6 +3,10 @@ class Jadwal extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['jadwal'] = $this->model('Jadwal_model')->getAllJadwal();
     $this->view('template/header');
     $this->view('jadwal/jadwal', $data);

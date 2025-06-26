@@ -3,6 +3,10 @@ class Peminjaman extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['peminjaman'] = $this->model('Peminjaman_model')->getAllPeminjaman();
     $this->view('template/header');
     $this->view('peminjaman/peminjaman', $data);

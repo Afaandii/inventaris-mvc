@@ -3,6 +3,11 @@ class Denda extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
+
     $data['denda'] = $this->model("Denda_model")->getAllDenda();
     $this->view('template/header');
     $this->view('denda/denda', $data);

@@ -3,6 +3,10 @@ class Hari extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['hari'] = $this->model('Hari_model')->getAllHari();
     $this->view('template/header');
     $this->view('hari/hari', $data);

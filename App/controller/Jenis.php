@@ -3,6 +3,10 @@ class Jenis extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['jenis'] = $this->model('Jenis_model')->getAllJenis();
     $this->view('template/header');
     $this->view('jenis/jenis', $data);

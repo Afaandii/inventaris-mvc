@@ -3,6 +3,10 @@ class Pelajaran extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['pelajaran'] = $this->model('Pelajaran_model')->getAllPelajaran();
     $this->view('template/header');
     $this->view('pelajaran/pelajaran', $data);

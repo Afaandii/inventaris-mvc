@@ -3,6 +3,10 @@ class Merk extends Controller
 {
   public function index()
   {
+    if (!isset($_SESSION['user'])) {
+      header("Location: " . BASEURL . "/auth");
+      exit;
+    }
     $data['merk'] = $this->model('Merk_model')->getAllMerk();
     $this->view('template/header');
     $this->view('merk/merk', $data);

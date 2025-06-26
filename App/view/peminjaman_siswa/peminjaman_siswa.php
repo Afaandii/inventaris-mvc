@@ -47,7 +47,8 @@
                             <a class="btn btn-warning mr-2"
                               href="<?= BASEURL ?>/peminjaman_siswa/edit/<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Update</a>
                             <a class="btn btn-danger"
-                              href="hapusPeminjamanSiswa.php?id=<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Delete</a>
+                              href="<?= BASEURL ?>/peminjaman_siswa/delete/<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>"
+                              onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
                           </td>
                           <td><?= $pinSis["KODE_PEMINJAMAN_SISWA"]; ?></td>
                           <td><?= $pinSis["USERNAME_PEMINJAM"]; ?></td>

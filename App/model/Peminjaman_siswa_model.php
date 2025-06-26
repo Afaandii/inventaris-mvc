@@ -72,4 +72,13 @@ class Peminjaman_siswa_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deletePeminjamanSiswa($id)
+  {
+    $this->db->query("DELETE FROM peminjaman_siswa WHERE ID_PEMINJAMAN_SISWA = :id");
+    $this->db->bind('id', $id);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

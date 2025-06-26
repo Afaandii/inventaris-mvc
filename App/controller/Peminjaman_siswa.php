@@ -55,4 +55,17 @@ class Peminjaman_siswa extends Controller
       die;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model('Peminjaman_siswa_model')->deletePeminjamanSiswa($id) > 0) {
+      Flasher::setFlash('Berhasil', 'Dihapus', 'success', 'Peminjaman Siswa');
+      header("Location: " . BASEURL . "/peminjaman_siswa");
+      die;
+    } else {
+      Flasher::setFlash('Gagal!', 'Dihapus', 'danger', 'Peminjaman Siswa');
+      header("Location: " . BASEURL . "/peminjaman_siswa");
+      die;
+    }
+  }
 }

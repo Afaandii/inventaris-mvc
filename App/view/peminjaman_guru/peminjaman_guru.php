@@ -3,8 +3,9 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Tabel Peminjaman Guru</h1>
+        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+          <h1 class="m-0 font-weight-bold">Manage Tabel Peminjaman Guru</h1>
+          <a href="<?= BASEURL ?>/peminjaman_guru/create" class="btn btn-secondary">Tambah Peminjaman Guru</a>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -26,7 +27,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
+                  <table id="example2" class="table table-bordered table-hover table-responsive-md">
                     <thead>
                       <tr>
                         <th>No</th>
@@ -39,24 +40,23 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['peminjaman_guru'] as $pinGuru) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a
-                            href="<?= BASEURL ?>/peminjaman_guru/edit/<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>">Update</a>
-                          |
-                          <a href="<?= BASEURL ?>/peminjaman_guru/delete/<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>"
-                            onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
-                        </td>
-                        <td><?= $pinGuru["KODE_PEMINJAMAN_GURU"]; ?></td>
-                        <td><?= $pinGuru["USERNAME_PEMINJAM"]; ?></td>
-                        <td><?= $pinGuru["KETERANGAN_PEMINJAMAN"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a class="btn btn-warning mr-2"
+                              href="<?= BASEURL ?>/peminjaman_guru/edit/<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>">Update</a>
+                            <a class="btn btn-danger"
+                              href="<?= BASEURL ?>/peminjaman_guru/delete/<?= $pinGuru["ID_PEMINJAMAN_GURU"]; ?>"
+                              onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
+                          </td>
+                          <td><?= $pinGuru["KODE_PEMINJAMAN_GURU"]; ?></td>
+                          <td><?= $pinGuru["USERNAME_PEMINJAM"]; ?></td>
+                          <td><?= $pinGuru["KETERANGAN_PEMINJAMAN"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="<?= BASEURL ?>/peminjaman_guru/create">Tambah Peminjaman Guru</a>
                 </div>
                 <!-- /.card-body -->
               </div>

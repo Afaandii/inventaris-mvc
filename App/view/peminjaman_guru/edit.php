@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Update Peminjaman Guru</h1>
+          <h1 class="font-weight-bold">Form Edit Peminjaman Guru</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -26,9 +26,10 @@
                 <div class="form-group">
                   <label for="kode">Kode Peminjaman Guru</label>
                   <input type="text" name="kode" id="kode" value="<?= $data['pin_gur']['KODE_PEMINJAMAN_GURU'] ?>"
-                    readonly> <br>
+                    readonly class="form-control mb-2">
+
                   <label for="peminjam">Peminjam</label>
-                  <select name="peminjam" id="peminjam">
+                  <select class="form-select mb-2" name="peminjam" id="peminjam">
                     <?php foreach ($data['peminjam'] as $peminjam): ?>
                       <?php $pilih = ($peminjam['ID_PEMINJAM'] == $data['pin_gur']['ID_PEMINJAM']) ? 'selected' : ''; ?>
                       <option value="<?= $peminjam['ID_PEMINJAM'] ?>" <?= $pilih ?>>
@@ -36,7 +37,7 @@
                       </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
+
                   <label for="pinGur">Keterangan Peminjaman</label>
                   <input type="text" name="ket_peminjaman" class="form-control" id="pinGur"
                     placeholder="Masukan Keterangan Peminjaman"
@@ -45,7 +46,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Edit Peminjaman Guru</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/peminjaman_guru" class="btn btn-info float-md-right">Kembali</a>
               </div>
             </form>
           </div>

@@ -38,16 +38,18 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <?php
+            $baseFolder = 'inventaris_mvc/public/';
             $currentUrl = $_SERVER['REQUEST_URI'];
+            $currentPath = parse_url($currentUrl, PHP_URL_PATH);
+            $relativePath = str_replace($baseFolder, '', $currentPath);
 
-            // Untuk menu Transaksi
             $isTransaksiActive =
-              strpos($currentUrl, '/pemesanan') !== false ||
-              strpos($currentUrl, '/peminjam') !== false ||
-              strpos($currentUrl, '/peminjaman') !== false ||
-              strpos($currentUrl, '/perbaikan') !== false ||
-              strpos($currentUrl, '/peminjaman_siswa') !== false ||
-              strpos($currentUrl, '/peminjaman_guru') !== false;
+              $relativePath === '/pemesanan' ||
+              $relativePath === '/peminjam' ||
+              $relativePath === '/peminjaman' ||
+              $relativePath === '/perbaikan' ||
+              $relativePath === '/peminjaman_siswa' ||
+              $relativePath === '/peminjaman_guru';
 
             // Untuk menu Master
             $isMasterActive =
@@ -78,42 +80,42 @@
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="<?= BASEURL; ?>/pemesanan"
-                    class="nav-link <?= strpos($currentUrl, '/pemesanan') !== false ? 'active' : '' ?>">
+                    class="nav-link <?= $relativePath === '/pemesanan' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Pemesanan</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= BASEURL; ?>/peminjam"
-                    class="nav-link <?= strpos($currentUrl, '/peminjam') !== false ? 'active' : '' ?>">
+                    class="nav-link <?= $relativePath === '/peminjam' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Peminjam</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= BASEURL; ?>/peminjaman"
-                    class="nav-link <?= strpos($currentUrl, '/peminjaman') !== false ? 'active' : '' ?>">
+                    class="nav-link <?= $relativePath === '/peminjaman' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Peminjaman</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= BASEURL; ?>/perbaikan"
-                    class="nav-link <?= strpos($currentUrl, '/perbaikan') !== false ? 'active' : '' ?>">
+                    class="nav-link <?= $relativePath === '/perbaikan' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Perbaikan</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= BASEURL; ?>/peminjaman_siswa"
-                    class="nav-link <?= strpos($currentUrl, '/peminjaman_siswa') !== false ? 'active' : '' ?>">
+                    class="nav-link <?= $relativePath === '/peminjaman_siswa' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Peminjaman Siswa</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= BASEURL; ?>/peminjaman_guru"
-                    class="nav-link <?= strpos($currentUrl, '/peminjaman_guru') !== false ? 'active' : '' ?>">
+                    class="nav-link <?= $relativePath === '/peminjaman_guru' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Peminjaman Guru</p>
                   </a>

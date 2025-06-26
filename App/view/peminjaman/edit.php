@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Edit Peminjaman</h1>
+          <h1 class="font-weight-bold">Form Edit Peminjaman</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -26,10 +26,10 @@
                 <div class="form-group">
                   <label for="kode">Kode Peminjaman</label>
                   <input type="text" id="kode" value="<?= $data['peminjaman']['KODE_PEMINJAMAN']; ?>" name="kode"
-                    readonly>
-                  <br>
+                    readonly class="form-control mb-2">
+
                   <label for="peminjam">Peminjam</label>
-                  <select name="peminjam" id="peminjam">
+                  <select class="form-select mb-2" name="peminjam" id="peminjam">
                     <?php foreach ($data['peminjam'] as $peminjam): ?>
                       <?php $pilih = ($peminjam['ID_PEMINJAM'] == $data['peminjaman']['ID_PEMINJAM']) ? 'selected' : ''; ?>
                       <option value="<?= $peminjam['ID_PEMINJAM'] ?>" <?= $pilih ?>>
@@ -37,9 +37,9 @@
                       </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
+
                   <label for="guru">Guru</label>
-                  <select name="guru" id="guru">
+                  <select class="form-select mb-2" name="guru" id="guru">
                     <?php foreach ($data['guru'] as $guru): ?>
                       <?php $pilih = ($guru['ID_GURU'] == $data['peminjaman']['ID_GURU']) ? 'selected' : ''; ?>
                       <option value="<?= $guru['ID_GURU'] ?>" <?= $pilih ?>>
@@ -47,9 +47,9 @@
                       </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
+
                   <label for="denda">Denda</label>
-                  <select name="denda" id="denda">
+                  <select class="form-select mb-2" name="denda" id="denda">
                     <?php foreach ($data['denda'] as $denda): ?>
                       <?php $pilih = ($denda['ID_DENDA'] == $data['peminjaman']['ID_DENDA']) ? 'selected' : ''; ?>
                       <option value="<?= $denda['ID_DENDA'] ?>" <?= $pilih ?>>
@@ -57,12 +57,12 @@
                       </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
+
                   <label for="tglPeminjaman">Tanggal Peminjaman</label>
-                  <input type="datetime-local" name="tgl_pemin" class="form-control" id="tglPeminjaman"
+                  <input type="datetime-local" name="tgl_pemin" class="form-control mb-2" id="tglPeminjaman"
                     placeholder="Masukan Tanggal Peminjaman" value="<?= $data['peminjaman']['TANGGAL_PEMINJAMAN'] ?>">
                   <label for="tglKembali">Tanggal Kembali</label>
-                  <input type="date" name="tgl_kem" class="form-control" id="tglKembali"
+                  <input type="date" name="tgl_kem" class="form-control mb-2" id="tglKembali"
                     placeholder="Masukan Tanggal Kembali" value="<?= $data['peminjaman']['TANGGAL_KEMBALI'] ?>">
                   <label for="tglPengembalian">Tanggal Pengembalian</label>
                   <input type="date" name="tgl_pengem" class="form-control" id="tglPengembalian"
@@ -72,7 +72,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Edit Peminjaman</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/peminjaman" class="btn btn-info float-md-right">Kembali</a>
               </div>
             </form>
           </div>

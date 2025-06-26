@@ -3,8 +3,9 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Tabel Peminjaman</h1>
+        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+          <h1 class="m-0 font-weight-bold">Manage Tabel Peminjaman</h1>
+          <a href="<?= BASEURL ?>/peminjaman/create" class="btn btn-secondary">Tambah Peminjaman</a>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -26,7 +27,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
+                  <table id="example2" class="table table-bordered table-hover table-responsive-md">
                     <thead>
                       <tr>
                         <th>No</th>
@@ -45,9 +46,11 @@
                       <?php foreach ($data['peminjaman'] as $pinjaman) { ?>
                         <tr>
                           <td><?php echo $i; ?></td>
-                          <td>
-                            <a href="<?= BASEURL ?>/peminjaman/edit/<?= $pinjaman["ID_PEMINJAMAN"]; ?>">Update</a> |
-                            <a href="<?= BASEURL ?>/peminjaman/delete/<?= $pinjaman["ID_PEMINJAMAN"]; ?>"
+                          <td width="20%">
+                            <a class="btn btn-warning"
+                              href="<?= BASEURL ?>/peminjaman/edit/<?= $pinjaman["ID_PEMINJAMAN"]; ?>">Update</a>
+                            <a class="btn btn-danger"
+                              href="<?= BASEURL ?>/peminjaman/delete/<?= $pinjaman["ID_PEMINJAMAN"]; ?>"
                               onclick="return confirm('Apakah anda yakin ingin menghapus data?')">Delete</a>
                           </td>
                           <td><?= $pinjaman["KODE_PEMINJAMAN"]; ?></td>
@@ -62,7 +65,6 @@
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="<?= BASEURL ?>/peminjaman/create">Tambah Peminjaman</a>
                 </div>
                 <!-- /.card-body -->
               </div>

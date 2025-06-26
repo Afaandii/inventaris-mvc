@@ -3,8 +3,9 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Peminjaman Siswa</h1>
+        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+          <h1 class="m-0 font-weight-bold">Manage Tabel Peminjaman Siswa</h1>
+          <a href="<?= BASEURL ?>/peminjaman_siswa/create" class="btn btn-secondary">Tambah Peminjaman Siswa</a>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -26,7 +27,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
+                  <table id="example2" class="table table-bordered table-hover table-responsive-md">
                     <thead>
                       <tr>
                         <th>No</th>
@@ -40,24 +41,23 @@
                     <tbody>
                       <?php $i = 1; ?>
                       <?php foreach ($data['peminjaman_siswa'] as $pinSis) { ?>
-                      <tr>
-                        <td><?php echo $i; ?></td>
-                        <td>
-                          <a
-                            href="<?= BASEURL ?>/peminjaman_siswa/edit/<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Update</a>
-                          |
-                          <a href="hapusPeminjamanSiswa.php?id=<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Delete</a>
-                        </td>
-                        <td><?= $pinSis["KODE_PEMINJAMAN_SISWA"]; ?></td>
-                        <td><?= $pinSis["USERNAME_PEMINJAM"]; ?></td>
-                        <td><?php echo $pinSis["MATA_PELAJARAN"]; ?></td>
-                        <td><?php echo $pinSis["GURU_PENGAJAR"]; ?></td>
-                      </tr>
-                      <?php $i++; ?>
+                        <tr>
+                          <td><?php echo $i; ?></td>
+                          <td>
+                            <a class="btn btn-warning mr-2"
+                              href="<?= BASEURL ?>/peminjaman_siswa/edit/<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Update</a>
+                            <a class="btn btn-danger"
+                              href="hapusPeminjamanSiswa.php?id=<?= $pinSis["ID_PEMINJAMAN_SISWA"]; ?>">Delete</a>
+                          </td>
+                          <td><?= $pinSis["KODE_PEMINJAMAN_SISWA"]; ?></td>
+                          <td><?= $pinSis["USERNAME_PEMINJAM"]; ?></td>
+                          <td><?php echo $pinSis["MATA_PELAJARAN"]; ?></td>
+                          <td><?php echo $pinSis["GURU_PENGAJAR"]; ?></td>
+                        </tr>
+                        <?php $i++; ?>
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="<?= BASEURL ?>/peminjaman_siswa/create">Tambah Peminjaman Siswa</a>
                 </div>
                 <!-- /.card-body -->
               </div>

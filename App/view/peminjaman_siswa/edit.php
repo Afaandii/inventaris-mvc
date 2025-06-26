@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Update Kelas</h1>
+          <h1 class="font-weight-bold">Form Edit Kelas</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -25,10 +25,11 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Peminjaman Siswa</label>
-                  <input type="text" name="kode" id="kode" value="<?= $data['pin_sis']['KODE_PEMINJAMAN_SISWA'] ?>">
-                  <br>
+                  <input type="text" name="kode" id="kode" value="<?= $data['pin_sis']['KODE_PEMINJAMAN_SISWA'] ?>"
+                    class="form-control mb-2">
+
                   <label for="peminjam">Peminjam</label>
-                  <select name="peminjam" id="peminjam">
+                  <select class="form-select mb-2" name="peminjam" id="peminjam">
                     <?php foreach ($data['peminjam'] as $peminjam): ?>
                     <?php $pilih = ($peminjam['ID_PEMINJAM'] == $data['pin_sis']['ID_PEMINJAM']) ? 'selected' : ''; ?>
                     <option value="<?= $peminjam['ID_PEMINJAM'] ?>" <?= $pilih ?>>
@@ -36,10 +37,10 @@
                     </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
+
                   <label for="mapel">Mata Pelajaran</label>
-                  <input type="text" name="mapel" class="form-control" id="mapel" placeholder="Masukan Mata Pelajaran"
-                    value="<?php echo $data['pin_sis']["MATA_PELAJARAN"]; ?>">
+                  <input type="text" name="mapel" class="form-control mb-2" id="mapel"
+                    placeholder="Masukan Mata Pelajaran" value="<?php echo $data['pin_sis']["MATA_PELAJARAN"]; ?>">
                   <label for="gurPe">Guru Pengajar</label>
                   <input type="text" name="guru" class="form-control" id="gurPe" placeholder="Masukan Guru Pengajar"
                     value="<?php echo $data['pin_sis']["GURU_PENGAJAR"]; ?>">
@@ -47,7 +48,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Edit Peminjaman Siswa</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/peminjaman_siswa" class="btn btn-info float-md-right">Kembali</a>
               </div>
             </form>
           </div>

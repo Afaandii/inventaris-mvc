@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Update Peminjam</h1>
+          <h1 class="font-weight-bold">Form Edit Peminjam</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -26,32 +26,36 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Peminjam</label>
-                  <input type="text" name="kode" id="kode" value="<?= $data['peminjam']['KODE_PEMINJAM'] ?>" readonly>
-                  <br>
+                  <input type="text" name="kode" id="kode" value="<?= $data['peminjam']['KODE_PEMINJAM'] ?>" readonly
+                    class="form-control mb-2">
+
                   <label for="username">Username Peminjam</label>
-                  <input type="text" name="username" class="form-control" id="username"
+                  <input type="text" name="username" class="form-control mb-2" id="username"
                     placeholder="Masukan Username Peminjam"
                     value="<?php echo $data['peminjam']["USERNAME_PEMINJAM"]; ?>">
                   <label for="pass">Password Peminjam</label>
-                  <input type="password" name="password" class="form-control" id="password"
+                  <input type="password" name="password" class="form-control mb-2" id="password"
                     placeholder="Masukan Password Peminjam"
                     value="<?php echo $data['peminjam']["PASSWORD_PEMINJAM"]; ?>">
                   <label for="status">Status Peminjam</label>
-                  <input type="text" name="status" class="form-control" id="status"
+                  <input type="text" name="status" class="form-control mb-2" id="status"
                     placeholder="Masukan Status Peminjam" value="<?php echo $data['peminjam']["STATUS_PEMINJAM"]; ?>">
                   <label for="keterangan">Keterangan Peminjam</label>
-                  <input type="text" name="keterangan" class="form-control" id="keterangan"
+                  <input type="text" name="keterangan" class="form-control mb-2" id="keterangan"
                     placeholder="Masukan Keterangan Peminjam"
                     value="<?php echo $data['peminjam']["KETERANGAN_PERINGATAN"]; ?>">
-                  <label for="img">Image Peminjam</label><br>
-                  <img src="<?= BASEURL ?>/img/<?= $data['peminjam']["IMAGE_PEMINJAM"]; ?>" alt=" gambar" width="200"
-                    height="150"><br>
-                  <input type="file" name="gambar" class="form-control" id="img">
+                  <div class="d-flex flex-column">
+                    <label for="img">Image Peminjam</label>
+                    <img src="<?= BASEURL ?>/img/<?= $data['peminjam']["IMAGE_PEMINJAM"]; ?>" alt=" gambar" width="200"
+                      class="mb-2" height="150">
+                    <input type="file" name="gambar" class="form-control" id="img">
+                  </div>
                 </div>
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Edit Peminjam</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/peminjam" class="btn btn-info float-md-right">Kembali</a>
               </div>
             </form>
           </div>

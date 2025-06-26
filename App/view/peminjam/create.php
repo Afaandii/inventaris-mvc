@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Tambah Peminjam</h1>
+          <h1 class="font-weight-bold">Form Tambah Peminjam</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -24,19 +24,20 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Peminjam</label>
-                  <input type="text" id="kode" value="<?= $data['kode']; ?>" name="kode">
-                  <br>
+                  <input type="text" id="kode" value="<?= $data['kode']; ?>" name="kode" class="form-control mb-2"
+                    readonly>
+
                   <label for="username">Username Peminjam</label>
-                  <input type="text" name="username" class="form-control" id="username"
+                  <input type="text" name="username" class="form-control mb-2" id="username"
                     placeholder="Masukan Username Peminjam">
                   <label for="password">Password Peminjam</label>
-                  <input type="password" name="password" class="form-control" id="password"
+                  <input type="password" name="password" class="form-control mb-2" id="password"
                     placeholder="Masukan Password Peminjam">
                   <label for="status">Status Peminjam</label>
-                  <input type="text" name="status" class="form-control" id="status"
+                  <input type="text" name="status" class="form-control mb-2" id="status"
                     placeholder="Masukan Status Peminjam">
                   <label for="keterangan">keterangan Peringatan Peminjam</label>
-                  <input type="text" name="keterangan" class="form-control" id="keterangan"
+                  <input type="text" name="keterangan" class="form-control mb-2" id="keterangan"
                     placeholder="Masukan Keterangan Peminjam">
                   <label for="image">Image Peminjam</label>
                   <input type="file" name="gambar" class="form-control" id="image"
@@ -45,7 +46,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Tambah Peminjam</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/peminjam" class="btn btn-info float-md-right">Kembali</a>
               </div>
             </form>
           </div>

@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Tambah Perbaikan</h1>
+          <h1 class="font-weight-bold">Form Tambah Perbaikan</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -24,16 +24,19 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="kode">Kode Perbaikan</label>
-                  <input type="text" name="kode" id="kode" value="<?= $data['kode'] ?>" readonly> <br>
+                  <input type="text" name="kode" id="kode" value="<?= $data['kode'] ?>" readonly
+                    class="form-control mb-2">
+
                   <label for="guru">Guru</label>
-                  <select name="guru" id="guru">
+                  <select class="form-select mb-2" name="guru" id="guru">
+                    <option value="">Pilih Guru</option>
                     <?php foreach ($data['guru'] as $guru): ?>
                       <option value="<?= $guru['ID_GURU'] ?>">
                         <?= $guru['ID_GURU'] ?> - <?= $guru['NAMA_GURU'] ?>
                       </option>
                     <?php endforeach; ?>
                   </select>
-                  <br>
+
                   <label for="perbaikan">Tanggal Perbaikan</label>
                   <input type="date" name="tgl_perbaikan" class="form-control" id="perbaikan"
                     placeholder="Masukan Perbaikan">
@@ -41,7 +44,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Tambah Perbaikan</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                <a href="<?= BASEURL ?>/perbaikan" class="btn btn-info float-md-right">Kembali</a>
               </div>
             </form>
           </div>

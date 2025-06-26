@@ -3,8 +3,9 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Tabel Perbaikan</h1>
+        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+          <h1 class="m-0 font-weight-bold">Manage Tabel Perbaikan</h1>
+          <a href="<?= BASEURL ?>/perbaikan/create" class="btn btn-secondary">Tambah Perbaikan</a>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -42,8 +43,9 @@
                         <tr>
                           <td><?php echo $i; ?></td>
                           <td>
-                            <a href="<?= BASEURL ?>/perbaikan/edit/<?= $per["ID_PERBAIKAN"]; ?>">Update</a> |
-                            <a href="<?= BASEURL ?>/perbaikan/delete/<?= $per["ID_PERBAIKAN"]; ?>"
+                            <a class="btn btn-warning mr-2"
+                              href="<?= BASEURL ?>/perbaikan/edit/<?= $per["ID_PERBAIKAN"]; ?>">Update</a>
+                            <a href="<?= BASEURL ?>/perbaikan/delete/<?= $per["ID_PERBAIKAN"]; ?>" class="btn btn-danger"
                               onclick="return confirm('Apakah anda yakin menghapus data?')">Delete</a>
                           </td>
                           <td><?= $per["KODE_PERBAIKAN"]; ?></td>
@@ -54,7 +56,6 @@
                       <?php }; ?>
                     </tbody>
                   </table>
-                  <a href="<?= BASEURL ?>/perbaikan/create">Tambah Perbaikan</a>
                 </div>
                 <!-- /.card-body -->
               </div>

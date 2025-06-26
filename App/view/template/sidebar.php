@@ -15,11 +15,10 @@
             <img src="<?= BASEURL ?>/img/foto me.jpg" class="img-circle img-fluid elevation-2" alt="User Image"
               style="height: 40px; width : 40px;">
           </div>
-          <div class="info">
+          <div class="info dropdown">
             <a href="#" class="d-block">Ahmad Afandi</a>
           </div>
         </div>
-
         <!-- SidebarSearch Form -->
         <div class="form-inline">
           <div class="input-group" data-widget="sidebar-search">

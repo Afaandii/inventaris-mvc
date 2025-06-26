@@ -34,4 +34,10 @@ class Auth extends Controller
       echo "<script>alert('Username tidak ditemukan!');window.location.href='" . BASEURL . "/auth';</script>";
     }
   }
+
+  public function logout()
+  {
+    session_destroy();
+    header("Location: " . BASEURL . "/auth");
+  }
 }

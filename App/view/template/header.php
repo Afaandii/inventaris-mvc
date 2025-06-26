@@ -55,5 +55,10 @@
           <a href="#" class="nav-link">Contact</a>
         </li>
       </ul>
+      <div class="ms-auto d-flex align-items-center">
+        <form action="<?= BASEURL ?>/auth/logout" method="post">
+          <button class="btn btn-danger">Logout</button>
+        </form>
+      </div>
     </nav>
     <!-- /.navbar -->

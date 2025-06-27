@@ -43,12 +43,12 @@
             $relativePath = str_replace($baseFolder, '', $currentPath);
 
             $isTransaksiActive =
-              $relativePath === '/pemesanan' ||
-              $relativePath === '/peminjam' ||
-              $relativePath === '/peminjaman' ||
-              $relativePath === '/perbaikan' ||
-              $relativePath === '/peminjaman_siswa' ||
-              $relativePath === '/peminjaman_guru';
+              preg_match('#^/pemesanan($|/)#', $relativePath) ||
+              preg_match('#^/peminjam($|/)#', $relativePath) ||
+              preg_match('#^/peminjaman($|/)#', $relativePath) ||
+              preg_match('#^/perbaikan($|/)#', $relativePath) ||
+              preg_match('#^/peminjaman_siswa($|/)#', $relativePath) ||
+              preg_match('#^/peminjaman_guru($|/)#', $relativePath);
 
             // Untuk menu Master
             $isMasterActive =
@@ -79,42 +79,42 @@
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="<?= BASEURL; ?>/pemesanan"
-                    class="nav-link <?= $relativePath === '/pemesanan' ? 'active' : '' ?>">
+                    class="nav-link <?= preg_match('#^/pemesanan($|/)#', $relativePath) ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Pemesanan</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= BASEURL; ?>/peminjam"
-                    class="nav-link <?= $relativePath === '/peminjam' ? 'active' : '' ?>">
+                    class="nav-link <?= preg_match('#^/peminjam($|/)#', $relativePath) ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Peminjam</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= BASEURL; ?>/peminjaman"
-                    class="nav-link <?= $relativePath === '/peminjaman' ? 'active' : '' ?>">
+                    class="nav-link <?= preg_match('#^/peminjaman($|/)#', $relativePath) ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Peminjaman</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= BASEURL; ?>/perbaikan"
-                    class="nav-link <?= $relativePath === '/perbaikan' ? 'active' : '' ?>">
+                    class="nav-link <?= preg_match('#^/perbaikan($|/)#', $relativePath) ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Perbaikan</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= BASEURL; ?>/peminjaman_siswa"
-                    class="nav-link <?= $relativePath === '/peminjaman_siswa' ? 'active' : '' ?>">
+                    class="nav-link <?= preg_match('#^/peminjaman_siswa($|/)#', $relativePath) ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Peminjaman Siswa</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= BASEURL; ?>/peminjaman_guru"
-                    class="nav-link <?= $relativePath === '/peminjaman_guru' ? 'active' : '' ?>">
+                    class="nav-link <?= preg_match('#^/peminjaman_guru($|/)#', $relativePath) ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Peminjaman Guru</p>
                   </a>
